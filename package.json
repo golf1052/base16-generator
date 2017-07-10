@@ -1,0 +1,22 @@
+{
+    "name": "base-16-generator",
+    "displayName": "base-16-generator",
+    "description": "All base16 themes generated on the fly",
+    "version": "0.0.1",
+    "publisher": "golf1052",
+    "engines": {
+        "vscode": "^1.13.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Base 16 Generator",
+                "uiTheme": "vs-dark",
+                "path": "./themes/Base 16 Generator-color-theme.json"
+            }
+        ]
+    }
+}
