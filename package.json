@@ -17,15 +17,15 @@
   "contributes": {
     "themes": [
       {
-        "label": "One Light",
-        "uiTheme": "vs",
-        "path": "./themes/base16-one-light.json"
+        "label": "Base16 Flat Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/base16-flat-dark.json"
       }
     ],
     "commands": [
       {
         "category": "Base16",
-        "title": "Activate theme",
+        "title": "Activate Theme",
         "command": "extension.activateTheme"
       }
     ]

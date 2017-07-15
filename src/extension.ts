@@ -35,8 +35,8 @@ async function activateTheme() {
         ignoreFocusOut: false,
         matchOnDescription: false,
         matchOnDetail: false,
-        placeHolder: ''
-    }
+        placeHolder: 'Base16 Ocean Dark'
+    };
     let selectedTheme = await vscode.window.showQuickPick(themesList, options);
     if (!selectedTheme) {
         return;
@@ -56,6 +56,7 @@ async function activateTheme() {
         path: './themes/' + selectedTheme.description
     };
     fs.writeFileSync(path.resolve(__dirname, '../../package.json'), JSON.stringify(packageInfo, null, 2));
+    vscode.window.showInformationMessage(`${selectedTheme.label} has been activated. Please restart VSCode and then go to Preferences: Color Theme.`);
 }
 
 function parseJson(text: string) {

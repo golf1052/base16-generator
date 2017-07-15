@@ -19,6 +19,7 @@ let schemesDirs = dir.filter(d => {
 let filesToDelete: string[] = [];
 
 schemesDirs.forEach(schemeDir => {
+    console.log(`Current folder: ${schemeDir}`);
     // then for each scheme folder read the directory
     let files = fs.readdirSync(path.join(__dirname, schemeDir));
     
@@ -40,13 +41,34 @@ schemesDirs.forEach(schemeDir => {
         }
     });
 
+    lightVersions.forEach(l => { console.log(l); });
+    namedDarkVersions.forEach(n => { console.log(n); });
+
     // then create and polish the light and dark files
     schemes.forEach(scheme => {
         let pathToSchemeFolder = path.join(__dirname, schemeDir);
+        if (scheme.indexOf('-light') != -1) {
+            if (!scheme.endsWith('-light')) {
+                return;
+            }
+        }
+        if (scheme.indexOf('-dark') != -1) {
+            if (!scheme.endsWith('-dark')) {
+                return;
+            }
+        }
+        let plainSchemeName: string = scheme;
+        if (plainSchemeName.endsWith('-light')) {
+            plainSchemeName = plainSchemeName.replace('-light.yaml', '.yaml');
+        }
+        if (plainSchemeName.endsWith('-dark')) {
+            plainSchemeName = plainSchemeName.replace('-dark.yaml', 'yaml');
+        }
+        // if the scheme we're on is a known light version
         if (lightVersions.indexOf(scheme) != -1) {
+            // then check if there aren't any named dark versions
             if (namedDarkVersions.length == 0) {
-                let darkVersion: string = scheme.replace('-light', '');
-                if (schemes.indexOf(darkVersion) == -1) {
+                if (schemes.indexOf(plainSchemeName) == -1) {
                     // if the dark version doesn't exist create it
                     console.log(`Creating dark version from light version: ${scheme}`);
                     reverseAndPolishScheme(scheme, pathToSchemeFolder, true, VersionToCreate.Dark, true);
@@ -54,7 +76,7 @@ schemesDirs.forEach(schemeDir => {
             }
             return;
         }
-        if (lightVersions.indexOf(appendStringToFilename(scheme, '-light')) == -1) {
+        if (lightVersions.indexOf(appendStringToFilename(plainSchemeName, '-light')) == -1) {
             // create reversed (light) file
             console.log(`Creating light version from dark version: ${scheme}`);
             reverseAndPolishScheme(scheme, pathToSchemeFolder, true, VersionToCreate.Light, true);
@@ -63,14 +85,17 @@ schemesDirs.forEach(schemeDir => {
             // also polish dark file scheme name
             console.log(`Polishing dark version: ${scheme}`);
             reverseAndPolishScheme(scheme, pathToSchemeFolder, false, VersionToCreate.Dark, true);
-        } 
+        }
     });
 
     filesToDelete.forEach(file => {
+        console.log(`Deleting ${file}`);
         fs.unlinkSync(file);
     });
     filesToDelete = [];
 });
+
+process.exit();
 
 function reverseAndPolishScheme(schemeFile: string,
     pathToSchemeFolder: string,
@@ -80,7 +105,6 @@ function reverseAndPolishScheme(schemeFile: string,
     let loadedScheme = yaml.safeLoad(fs.readFileSync(path.join(pathToSchemeFolder, schemeFile), 'utf8'));
     let strippedFileName: string = schemeFile.replace('-light', '').replace('-dark', '');
     let newFileName: string = '';
-    console.log(`Processing ${schemeFile}`);
     if (reverseFile) {
         console.log(`Reversing`);
         let greyColors: string[] = [];
@@ -93,12 +117,13 @@ function reverseAndPolishScheme(schemeFile: string,
         }
     }
     if (appendVersionToTitle) {
+        loadedScheme.scheme = cleanSchemeTitle(loadedScheme.scheme);
         if (versionToCreate == VersionToCreate.Dark) {
-            console.log(`Appending dark to title`);
+            console.log(`Appending dark to ${loadedScheme.scheme}`);
             loadedScheme['scheme'] += ' Dark';
         }
         else if (versionToCreate == VersionToCreate.Light) {
-            console.log(`Appending light to title`);
+            console.log(`Appending light to ${loadedScheme.scheme}`);
             loadedScheme['scheme'] += ' Light';
         }
     }
@@ -111,8 +136,20 @@ function reverseAndPolishScheme(schemeFile: string,
     console.log(`Creating new file and deleting old file: ${newFileName}`);
     fs.writeFileSync(path.join(pathToSchemeFolder, newFileName), yaml.safeDump(loadedScheme));
     if (filesToDelete.indexOf(path.join(pathToSchemeFolder, schemeFile)) == -1) {
-        // filesToDelete.push(path.join(pathToSchemeFolder, schemeFile));
+        if (schemeFile.indexOf('-dark') == -1 && schemeFile.indexOf('-light') == -1) {
+            filesToDelete.push(path.join(pathToSchemeFolder, schemeFile));
+        }
     }
+}
+
+function cleanSchemeTitle(schemeTitle: string): string {
+    if (schemeTitle.endsWith(' Dark')) {
+        schemeTitle.replace(' Dark', '');
+    }
+    if (schemeTitle.endsWith(' Light')) {
+        schemeTitle.replace(' Light', '');
+    }
+    return schemeTitle;
 }
 
 function appendStringToFilename(filename: string, str: string): string {
