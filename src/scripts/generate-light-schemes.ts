@@ -9,7 +9,7 @@ enum VersionToCreate {
 }
 
 // read the directory
-let dir = fs.readdirSync(__dirname);
+let dir = fs.readdirSync(path.resolve('.'));
 
 // then filter out everything that isn't a folder
 let schemesDirs = dir.filter(d => {
@@ -21,7 +21,7 @@ let filesToDelete: string[] = [];
 schemesDirs.forEach(schemeDir => {
     console.log(`Current folder: ${schemeDir}`);
     // then for each scheme folder read the directory
-    let files = fs.readdirSync(path.join(__dirname, schemeDir));
+    let files = fs.readdirSync(path.resolve('.', schemeDir));
     
     // filter out anything that isn't a .yaml file
     let schemes = files.filter(f => {
@@ -46,7 +46,7 @@ schemesDirs.forEach(schemeDir => {
 
     // then create and polish the light and dark files
     schemes.forEach(scheme => {
-        let pathToSchemeFolder = path.join(__dirname, schemeDir);
+        let pathToSchemeFolder = path.resolve('.', schemeDir);
         if (scheme.indexOf('-light') != -1) {
             if (!scheme.endsWith('-light')) {
                 return;
