@@ -13,8 +13,8 @@ export function activate(context: vscode.ExtensionContext) {
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with  registerCommand
     // The commandId parameter must match the command field in package.json
-    let disposable = vscode.commands.registerCommand('extension.activateTheme', async () => {
-        await activateTheme();
+    let disposable = vscode.commands.registerCommand('base16.generator.activateTheme', function () {
+        activateTheme();
     });
 
     context.subscriptions.push(disposable);
@@ -35,7 +35,7 @@ async function activateTheme() {
         ignoreFocusOut: false,
         matchOnDescription: false,
         matchOnDetail: false,
-        placeHolder: 'Base16 Ocean Dark'
+        placeHolder: 'Base16 Default Dark'
     };
     let selectedTheme = await vscode.window.showQuickPick(themesList, options);
     if (!selectedTheme) {

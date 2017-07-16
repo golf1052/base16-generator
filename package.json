@@ -7,7 +7,7 @@
   "keywords": [
     "base16"
   ],
-  "icon": "",
+  "icon": "images/logo.png",
   "license": "See license in LICENSE",
   "homepage": "https://github.com/golf1052/base16-generator",
   "repository": {
@@ -35,16 +35,16 @@
   "contributes": {
     "themes": [
       {
-        "label": "Base16 Ocean Dark",
+        "label": "Base16 Default Dark",
         "uiTheme": "vs-dark",
-        "path": "./themes/base16-ocean-dark.json"
+        "path": "./themes/base16-default-dark.json"
       }
     ],
     "commands": [
       {
         "category": "Base16",
         "title": "Activate Theme",
-        "command": "extension.activateTheme"
+        "command": "base16.generator.activateTheme"
       }
     ]
   },
@@ -54,12 +54,14 @@
     "postinstall": "node ./node_modules/vscode/bin/install",
     "test": "node ./node_modules/vscode/bin/test"
   },
+  "dependencies": {
+    "strip-json-comments": "^2.0.1"
+  },
   "devDependencies": {
     "@types/mocha": "^2.2.32",
     "@types/node": "^6.0.40",
     "js-yaml": "^3.9.0",
     "mocha": "^2.3.3",
-    "strip-json-comments": "^2.0.1",
     "typescript": "^2.0.3",
     "vscode": "^1.0.0"
   }
