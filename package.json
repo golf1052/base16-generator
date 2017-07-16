@@ -4,6 +4,24 @@
   "description": "All Base16 themes available on the fly",
   "version": "1.0.0",
   "publisher": "golf1052",
+  "keywords": [
+    "base16"
+  ],
+  "icon": "",
+  "license": "See license in LICENSE",
+  "homepage": "https://github.com/golf1052/base16-generator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/golf1052/base16-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/golf1052/base16-generator/issues",
+    "email": "golf1052@msn.com"
+  },
+  "galleryBanner": {
+    "color": "#8fa1b3",
+    "theme": "light"
+  },
   "engines": {
     "vscode": "^1.13.0"
   },
@@ -17,9 +35,9 @@
   "contributes": {
     "themes": [
       {
-        "label": "Base16 Tomorrow Night Dark",
+        "label": "Base16 Ocean Dark",
         "uiTheme": "vs-dark",
-        "path": "./themes/base16-tomorrow-night-dark.json"
+        "path": "./themes/base16-ocean-dark.json"
       }
     ],
     "commands": [

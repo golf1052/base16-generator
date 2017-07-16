@@ -2,7 +2,7 @@
 
 A VSCode extension that provides all the Base16 themes. This extension themes both syntax and workbench colors using Base16 schemes. Base16 was created by [Chris Kempson](http://chriskempson.com).
 
-![](images/demo.gif)
+![](https://fat.gfycat.com/BriefEnlightenedAlligatorsnappingturtle.gif)
 
 ## Usage
 
