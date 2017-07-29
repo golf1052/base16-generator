@@ -49,6 +49,12 @@ Gruvbox light, medium
 Gruvbox light, soft  
 Materia Dark  
 Materia Light  
+Material Dark  
+Material Darker  
+Material Light  
+Material Lighter  
+Material Palenight Dark  
+Material Palenight Light  
 Mexico Light  
 Nord Dark  
 Nord Light  

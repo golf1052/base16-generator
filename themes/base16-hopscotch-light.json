@@ -67,7 +67,7 @@
         "editor.inactiveSelectionBackground": "#b9b5b8",
         "editor.wordHighlightBackground": "#b9b5b8",
         "editor.wordHighlightStrongBackground": "#989498",
-        "editor.findMatchBackground": "#fdcc59",
+        "editor.findMatchBackground": "#fdcc596f",
         "editor.findMatchHighlightBackground": "#fd8b196f",
         "editor.findRangeHighlightBackground": "#f0f",
         "editor.hoverHighlightBackground": "#b9b5b8",
@@ -163,7 +163,7 @@
         "descriptionForeground": "#989498",
         "textBlockQuote.background": "#d5d3d5",
         "textBlockQuote.border": "#1290bf",
-        "textCodeBlock.background": "#0f0",
+        "textCodeBlock.background": "#ffffff",
         "textLink.activeForeground": "#149b93",
         "textLink.foreground": "#1290bf",
         "textPreformat.foreground": "#1290bf",
@@ -237,11 +237,21 @@
             }
         },
         {
+            "name": "Keyword Control",
+            "scope": [
+                "keyword.control.flow"
+            ],
+            "settings": {
+                "foreground": "#c85e7c"
+            }
+        },
+        {
             "name": "Operator, Misc",
             "scope": [
                 "keyword.control",
                 "constant.other.color",
                 "punctuation",
+                "punctuation.section.class.end",
                 "meta.tag",
                 "punctuation.definition.tag",
                 "punctuation.separator.inheritance.php",
@@ -799,8 +809,7 @@
             "name": "Markdown - Fenced Bode Block Variable",
             "scope": [
                 "markup.raw.block.fenced.markdown",
-                "variable.language.fenced.markdown",
-                "punctuation.section.class.end"
+                "variable.language.fenced.markdown"
             ],
             "settings": {
                 "foreground": "#f0f"
