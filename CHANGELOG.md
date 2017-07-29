@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   - Material Palenight Light
 
 ### Changed
-- Fixed coloring of `if` in python
+- Fixed coloring of `if` in python (see https://github.com/golf1052/base16-generator/issues/1)
 
 ## [1.0.0] - 2017-07-15
 - Initial release
