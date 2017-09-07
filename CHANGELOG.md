@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.1] - 2017-09-06
+### Fixed
+- Marked Base16 Twilight Dark as a "dark" theme, it was incorrectly marked as "light".
+
 ## [1.1.0] - 2017-07-29
 ### Added
 - Added themes
