@@ -15,6 +15,17 @@
         },
         {
             "type": "node",
+            "request": "launch",
+            "name": "Debug build-themes",
+            "program": "${workspaceRoot}/src/scripts/build-themes.ts",
+            "sourceMaps": true,
+            "outFiles": [
+                "${workspaceRoot}/out/src/scripts/*.js"
+            ],
+            "cwd": "${workspaceRoot}/out/src/scripts"
+        },
+        {
+            "type": "node",
             "request": "attach",
             "name": "Attach to Remote",
             "address": "127.0.0.1",

@@ -5,6 +5,7 @@ import * as child_process from 'child_process';
 import * as rimraf from 'rimraf';
 import * as generate_light_schemes from './generate-light-schemes';
 import * as finish_themes from './finish-themes';
+import * as list_themes from './list-themes';
 var recursive_copy = require('recursive-copy');
 var mkdirp = require('mkdirp');
 
@@ -29,8 +30,10 @@ function main(): void {
         printE(e);
     }
 
+    let schemesDir = path.join(dir, 'sources/schemes');
+
     // Generate light schemes
-    generate_light_schemes.mainWithDir(path.join(dir, 'sources/schemes'));
+    generate_light_schemes.mainWithDir(schemesDir);
 
     // Build templates
     try {
@@ -51,7 +54,16 @@ function main(): void {
         .then(() => {
             // Finally, finish themes
             finish_themes.mainWithDir(themesDir);
-        });
+            
+            // also update themes list
+            list_themes.mainWithDir(schemesDir);
+
+            // and copy the result over to the right place
+            return copy(path.join(schemesDir, 'themes.md'), path.resolve(dir, '../../themes.md'));
+        })
+        .then(() => {
+            console.log('Done!');
+        })
 }
 
 async function copy(src: string, dest: string): Promise<void> {

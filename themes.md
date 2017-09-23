@@ -20,6 +20,8 @@ Atelier Seaside Dark
 Atelier Seaside Light  
 Atelier Sulphurpool Dark  
 Atelier Sulphurpool Light  
+Brush Trees Dark  
+Brush Trees Light  
 Circus Dark  
 Circus Light  
 Classic Dark  
@@ -38,8 +40,7 @@ Ocean Dark
 Ocean Light  
 Dracula Dark  
 Dracula Light  
-Github Dark  
-Github Light  
+Github  
 Gruvbox dark, hard  
 Gruvbox dark, medium  
 Gruvbox dark, pale  
@@ -47,6 +48,7 @@ Gruvbox dark, soft
 Gruvbox light, hard  
 Gruvbox light, medium  
 Gruvbox light, soft  
+Gruvbox dark, pale Light  
 Materia Dark  
 Materia Light  
 Material Dark  
@@ -55,14 +57,17 @@ Material Light
 Material Lighter  
 Material Palenight Dark  
 Material Palenight Light  
+Mellow Purple Dark  
+Mellow Purple Light  
+Mexico Dark  
 Mexico Light  
 Nord Dark  
 Nord Light  
+One Dark  
 One Light  
 OneDark Dark  
 OneDark Light  
-Rebecca Dark  
-Rebecca Light  
+Rebecca  
 Summerfruit Dark  
 Summerfruit Light  
 Tomorrow Dark  
@@ -139,8 +144,6 @@ London Tube Dark
 London Tube Light  
 Unikitty Dark  
 Unikitty Light  
-Visual Studio Blue Dark  
-Visual Studio Blue Light  
 Woodland Dark  
 Woodland Light  
 Zenburn Dark  
