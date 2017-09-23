@@ -28,7 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Fixed
 - Updated and fixed the generate theme scripts as well as automated the process.
-- The following themes were fixed because of this (this changes was prompted by https://github.com/golf1052/base16-generator/issues/3)
+- The following themes were fixed because of this (this change was prompted by https://github.com/golf1052/base16-generator/issues/3)
   - Cupcake Dark is now correctly dark
   - Cupcake Light is now correctly light
   - Cupertino Dark is now correctly dark
