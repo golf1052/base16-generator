@@ -62,8 +62,10 @@ function main(): void {
             return copy(path.join(schemesDir, 'themes.md'), path.resolve(dir, '../../themes.md'));
         })
         .then(() => {
+            // garbage is bad
+            rimraf.sync(dir);
             console.log('Done!');
-        })
+        });
 }
 
 async function copy(src: string, dest: string): Promise<void> {
