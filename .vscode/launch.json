@@ -4,6 +4,17 @@
     "configurations": [
         {
             "type": "node",
+            "request": "launch",
+            "name": "Debug generate-light-schemes",
+            "program": "${workspaceRoot}/src/scripts/generate-light-schemes.ts",
+            "sourceMaps": true,
+            "outFiles": [
+                "${workspaceRoot}/out/src/scripts/*.js"
+            ],
+            "cwd": "C:/Users/Sanders/builder/sources/schemes"
+        },
+        {
+            "type": "node",
             "request": "attach",
             "name": "Attach to Remote",
             "address": "127.0.0.1",
