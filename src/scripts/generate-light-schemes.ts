@@ -259,7 +259,7 @@ function isSchemeDark(schemeFile: string, pathToSchemeFolder: string): SchemePro
     return schemeProperties;
 }
 
-function isColorDark(inputColor: string): boolean {
+export function isColorDark(inputColor: string): boolean {
     let c = color(inputColor);
     // algorithm from https://docs.microsoft.com/en-us/windows/uwp/style/color
     return (5 * c.green() + 2 * c.red() + c.blue()) <= 8 * 128;
