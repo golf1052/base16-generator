@@ -34,6 +34,7 @@ If you want or need to run the steps manually
 ### Testing Theme Changes
 
 #### Things To Look At
+
 [VSCode Theme Color Reference](https://code.visualstudio.com/docs/getstarted/theme-color-reference)  
 [Base16 Website](http://chriskempson.com/projects/base16/)  
 [Base16 Theme Examples](https://chriskempson.github.io/base16/)  
@@ -45,3 +46,7 @@ If you want or need to run the steps manually
 4. Modify `builder/templates/vscode/templates/default.mustache` to reflect the changes made in `reference-theme/base16-ocean-dark.json`. Follow the template hex variables found [here](https://github.com/chriskempson/base16/blob/master/builder.md#template-variables).
 5. Copy `builder/templates/vscode/templates/default.mustache` to `/path/to/base16-builder/templates/vscode/templates/` (see step 4 from [Setup Builder](#Setup-Builder).
 6. Follow the steps in Generate Themes
+
+## Pushing Changes
+
+When pushing changes make sure that code changes and theme updates are in separate commits. For example [code changes for 1.3.0](https://github.com/golf1052/base16-generator/commit/4eab7a3b13ad951adf1984f1827a7f58480cd208) and separate [theme update commit](https://github.com/golf1052/base16-generator/commit/a331be7eb4b45bc980ebdf7058c59c09b393b12a).
