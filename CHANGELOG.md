@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.3.0] - 2017-10-07
+## Added
+- Added themes
+  - XCode Dusk Dark
+  - XCode Dusk Light
+
+## Fixed
+- Modified the script that finishes the JSON theme files to now check if the background color is light or dark instead of just relying on the filename. If a theme didn't have light or dark in the filename then it could be themed incorrectly. The following themes were fixed by this change.
+  - Github
+
 ## [1.2.0] - 2017-09-23
 ## Added
 - Added themes
