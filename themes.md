@@ -146,5 +146,7 @@ Unikitty Dark
 Unikitty Light  
 Woodland Dark  
 Woodland Light  
+XCode Dusk Dark  
+XCode Dusk Light  
 Zenburn Dark  
 Zenburn Light  
