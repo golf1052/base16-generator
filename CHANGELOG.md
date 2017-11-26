@@ -6,6 +6,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.4.0] - 2017-11-25
+## Added
+- Added themes
+  - Porple Dark
+  - Porple Light
+- Added support for new workbench theme elements that were introduced in 1.18
+
+## Changed
+- Changed syntax highlighting in the following languages to conform more to the [base16 styling guidelines](https://github.com/chriskempson/base16/blob/master/styling.md)
+  - C#
+  - Java
+  - Typescript
+- build-themes.js now copies over the default.mustache file to the vscode templates directory when the themes are being built. Now you don't have to commit the updated template file to the [base16-vscode](https://github.com/golf1052/base16-vscode) first.
+
+## Fixed
+- Repeated characters in Markdown file (see https://github.com/golf1052/base16-generator/issues/8)
+- Suggest widget highlighting (Intellisense)
+- Contributing instructions
+
 ## [1.3.0] - 2017-10-07
 ## Added
 - Added themes

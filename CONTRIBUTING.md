@@ -20,7 +20,8 @@ I am currently testing this extension with node v7.4.0.
 ### Generate Themes
 
 1. Run the debugger for this extension in VSCode to create the scripts. They will be located in `out/src/scripts`. You can also run `tsc -w` (requires typescript to be installed `npm install -g typescript`) to compile the scripts and auto compile any changes you make.
-2. Run `node /path/to/base16-generator/out/src/scripts/build-themes.js`. This will do everything for you.
+2. Change directory to `/path/to/base16-generator/out/src/scripts`
+2. Run `node ./build-themes.js`. This will do everything for you.
 
 If you want or need to run the steps manually
 
@@ -44,8 +45,7 @@ If you want or need to run the steps manually
 2. Copy `reference-theme/base16-ocean-dark.json` into the `themes` directory and debug the extension to make sure the changes have the desired effect.
 3. Repeat 1 and 2 until you are ready to publish your changes.
 4. Modify `builder/templates/vscode/templates/default.mustache` to reflect the changes made in `reference-theme/base16-ocean-dark.json`. Follow the template hex variables found [here](https://github.com/chriskempson/base16/blob/master/builder.md#template-variables).
-5. Copy `builder/templates/vscode/templates/default.mustache` to `/path/to/base16-builder/templates/vscode/templates/` (see step 4 from [Setup Builder](#Setup-Builder).
-6. Follow the steps in Generate Themes
+5. Follow the steps in Generate Themes
 
 ## Pushing Changes
 

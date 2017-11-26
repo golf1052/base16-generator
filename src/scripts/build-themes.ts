@@ -30,27 +30,35 @@ function main(): void {
         printE(e);
     }
 
+    let updatedTemplateFile = path.resolve(dir, '../../builder/templates/vscode/templates/default.mustache');
     let schemesDir = path.join(dir, 'sources/schemes');
-
-    // Generate light schemes
-    generate_light_schemes.mainWithDir(schemesDir);
-
-    // Build templates
-    try {
-        child_process.execSync('base16-builder build --template vscode', options);
-    }
-    catch (e) {
-        printE(e);
-    }
-
-    // Empty the themes dir
     let themesDir = path.resolve(dir, '../../themes');
-    fs.readdirSync(themesDir).forEach(file => {
-        fs.unlinkSync(path.join(themesDir, file));
-    });
 
-    // Copy themes
-    copy(path.join(dir, 'themes/vscode/themes'), themesDir)
+    // Copy user updated template to builder template directory
+    copy(updatedTemplateFile, path.join(dir, 'sources/templates/vscode/templates/default.mustache'))
+        .then(() => {
+            
+            
+            // Generate light schemes
+            generate_light_schemes.mainWithDir(schemesDir);
+        
+            // Build templates
+            try {
+                child_process.execSync('base16-builder build --template vscode', options);
+            }
+            catch (e) {
+                printE(e);
+            }
+        
+            // Empty the themes dir
+            
+            fs.readdirSync(themesDir).forEach(file => {
+                fs.unlinkSync(path.join(themesDir, file));
+            });
+        
+            // Copy themes
+            return copy(path.join(dir, 'themes/vscode/themes'), themesDir)  
+        })
         .then(() => {
             // Finally, finish themes
             finish_themes.mainWithDir(themesDir);
