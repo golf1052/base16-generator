@@ -67,6 +67,8 @@ One Dark
 One Light  
 OneDark Dark  
 OneDark Light  
+Porple Dark  
+Porple Light  
 Rebecca  
 Summerfruit Dark  
 Summerfruit Light  
