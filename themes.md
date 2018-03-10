@@ -26,6 +26,8 @@ Circus Dark
 Circus Light  
 Classic Dark  
 Classic Light  
+Codeschool Dark  
+Codeschool Light  
 Cupertino Dark  
 Cupertino Light  
 Cupcake Dark  
@@ -49,6 +51,7 @@ Gruvbox light, hard
 Gruvbox light, medium  
 Gruvbox light, soft  
 Gruvbox dark, pale Light  
+Icy Dark  
 Materia Dark  
 Materia Light  
 Material Dark  
@@ -92,8 +95,6 @@ Bright Dark
 Bright Light  
 Chalk Dark  
 Chalk Light  
-Codeschool Dark  
-Codeschool Light  
 Darktooth Dark  
 Darktooth Light  
 Embers Dark  
