@@ -14,9 +14,9 @@
         "errorForeground": "#bf616a", //8
 
         // Button control
-        "button.background": "#343d46", //1
-        "button.foreground": "#c0c5ce", //5
-        "button.hoverBackground": "#65737e", //3
+        "button.background": "#8fa1b3", //D
+        "button.foreground": "#eff1f5", //7
+        "button.hoverBackground": "#a7adba", //4
 
         // Dropdown control
         "dropdown.background": "#2b303b", //0
@@ -220,6 +220,16 @@
         "titleBar.inactiveForeground": "#65737e", //3
 
         // Notification dialog colors
+        // "notificationCenter.border": "",
+        "notificationCenterHeader.foreground": "#c0c5ce", //5
+        "notificationCenterHeader.background": "#343d46", //1
+        // "notificationToast.border": "",
+        "notifications.foreground": "#c0c5ce", //5
+        "notifications.background": "#4f5b66", //2
+        // "notifications.border": "",
+        "notificationLink.foreground": "#8fa1b3", //D
+
+        // Below is no longer supported as of 1.21
         "notification.background": "#4f5b66", //2
         "notification.foreground": "#c0c5ce", //5
         "notification.buttonBackground": "#8fa1b3", //D
@@ -231,6 +241,7 @@
         "notification.warningForeground": "#eff1f5", //7
         "notification.errorBackground": "#bf616a", //8
         "notification.errorForeground": "#eff1f5", //7
+        // Above is no longer supported as of 1.21
 
         // Extensions
         "extensionButton.prominentBackground": "#a3be8c", //B

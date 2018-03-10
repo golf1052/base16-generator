@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.5.0] - 2018-03-09
+## Added
+- Added themes
+  - Icy Dark
+- Added support for new notification style that was introduced in 1.21.
+
+## Fixed
+- Fixed coloring of find selected highlight background
+
 ## [1.4.0] - 2017-11-25
 ## Added
 - Added themes

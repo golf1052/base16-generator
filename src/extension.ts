@@ -49,8 +49,7 @@ async function activateTheme() {
     };
     fs.writeFileSync(path.resolve(__dirname, '../../package.json'), JSON.stringify(packageInfo, null, 2));
     let reloadAction: vscode.MessageItem = {title: 'Reload Now'};
-    let dismissAction: vscode.MessageItem = {title: 'Dismiss', isCloseAffordance: true};
-    let selectedAction = await vscode.window.showInformationMessage(`${selectedTheme.label} has been activated. Please restart VSCode and then go to Preferences: Color Theme.`, reloadAction, dismissAction);
+    let selectedAction = await vscode.window.showInformationMessage(`${selectedTheme.label} has been activated. Please restart VSCode and then go to Preferences: Color Theme.`, reloadAction);
     if (!selectedAction) {
         return;
     }
