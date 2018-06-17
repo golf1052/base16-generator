@@ -6,6 +6,42 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.6.0] - 2018-06-15
+## Added
+- Added themes
+  - Black Metal (Bathory) Dark  
+  - Black Metal (Bathory) Light  
+  - Black Metal (Burzum) Dark  
+  - Black Metal (Burzum) Light  
+  - Black Metal (Dark Funeral)  
+  - Black Metal Dark  
+  - Black Metal (Dark Funeral) Light  
+  - Black Metal (Gorgoroth) Dark  
+  - Black Metal (Gorgoroth) Light  
+  - Black Metal (Immortal) Dark  
+  - Black Metal (Immortal) Light  
+  - Black Metal (Khold) Dark  
+  - Black Metal (Khold) Light  
+  - Black Metal Light  
+  - Black Metal (Marduk) Dark  
+  - Black Metal (Marduk) Light  
+  - Black Metal (Mayhem) Dark  
+  - Black Metal (Mayhem) Light  
+  - Black Metal (Nile) Dark  
+  - Black Metal (Nile) Light  
+  - Black Metal (Venom) Dark  
+  - Black Metal (Venom) Light  
+  - Brogrammer Dark  
+  - Brogrammer Light  
+  - Material Vivid Dark  
+  - Material Vivid Light  
+  - Outrun Dark  
+  - Outrun Light  
+  - Snazzy Dark  
+  - Snazzy Light  
+- Added `editorIndentGuide.activeBackground` from 1.23
+- Added `list.errorForeground` and `list.warningForeground` from 1.24
+
 ## [1.5.0] - 2018-03-09
 ## Added
 - Added themes

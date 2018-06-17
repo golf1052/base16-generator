@@ -60,6 +60,10 @@
         "list.hoverForeground": "#c0c5ce", //5
         "list.inactiveSelectionBackground": "#4f5b66", //2
         "list.inactiveSelectionForeground": "#c0c5ce", //5
+        "list.inactiveFocusBackground": "#4f5b66", //2
+        "list.invalidItemForeground": "#bf616a", //8
+        "list.errorForeground": "#bf616a", //8
+        "list.warningForeground": "#d08770", //9
 
         // Activity bar
         "activityBar.background": "#2b303b", //0
@@ -87,10 +91,16 @@
         "tab.activeBackground": "#2b303b", //0
         "tab.activeForeground": "#c0c5ce", //5
         // "tab.border": "#f00",
+        // "tab.unfocusedActiveBorder": "#f00",
+        // "tab.activeBorderTop": "#f00",
         "tab.inactiveBackground": "#343d46", //1
-        "tab.inactiveForeground": "#65737e",
+        "tab.inactiveForeground": "#65737e", //3
         "tab.unfocusedActiveForeground": "#a7adba", //4
-        "tab.unfocusedInactiveForeground": "#a7adba", //4
+        "tab.unfocusedInactiveForeground": "#65737e", //3
+        "tab.hoverBackground": "#4f5b66", //2
+        "tab.unfocusedHoverBackground": "#4f5b66", //2
+        // "tab.hoverBorder": "#f00",
+        // "tab.unfocusedHoverBorder": "#f00",
 
         // Editor colors
         "editor.background": "#2b303b", //0
@@ -112,6 +122,7 @@
         "editor.rangeHighlightBackground": "#343d46", //1
         "editorWhitespace.foreground": "#65737e", //3
         "editorIndentGuide.background": "#65737e", //3
+        "editorIndentGuide.activeBackground": "#a7adba", //4
         "editorRuler.foreground": "#65737e", //3
         "editorCodeLens.foreground": "#4f5b66", //2
         "editorBracketMatch.background": "#4f5b66", //2
