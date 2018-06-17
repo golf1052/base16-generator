@@ -20,6 +20,30 @@ Atelier Seaside Dark
 Atelier Seaside Light  
 Atelier Sulphurpool Dark  
 Atelier Sulphurpool Light  
+Black Metal (Bathory) Dark  
+Black Metal (Bathory) Light  
+Black Metal (Burzum) Dark  
+Black Metal (Burzum) Light  
+Black Metal (Dark Funeral)  
+Black Metal Dark  
+Black Metal (Dark Funeral) Light  
+Black Metal (Gorgoroth) Dark  
+Black Metal (Gorgoroth) Light  
+Black Metal (Immortal) Dark  
+Black Metal (Immortal) Light  
+Black Metal (Khold) Dark  
+Black Metal (Khold) Light  
+Black Metal Light  
+Black Metal (Marduk) Dark  
+Black Metal (Marduk) Light  
+Black Metal (Mayhem) Dark  
+Black Metal (Mayhem) Light  
+Black Metal (Nile) Dark  
+Black Metal (Nile) Light  
+Black Metal (Venom) Dark  
+Black Metal (Venom) Light  
+Brogrammer Dark  
+Brogrammer Light  
 Brush Trees Dark  
 Brush Trees Light  
 Circus Dark  
@@ -54,6 +78,8 @@ Gruvbox dark, pale Light
 Icy Dark  
 Materia Dark  
 Materia Light  
+Material Vivid Dark  
+Material Vivid Light  
 Material Dark  
 Material Darker  
 Material Light  
@@ -70,9 +96,17 @@ One Dark
 One Light  
 OneDark Dark  
 OneDark Light  
+Outrun Dark  
+Outrun Light  
 Porple Dark  
 Porple Light  
 Rebecca  
+Snazzy Dark  
+Snazzy Light  
+Solar Flare Dark  
+Solar Flare Light  
+Solarized Dark  
+Solarized Light  
 Summerfruit Dark  
 Summerfruit Light  
 Tomorrow Dark  
@@ -137,10 +171,6 @@ Seti UI Dark
 Seti UI Light  
 Shapeshifter Dark  
 Shapeshifter Light  
-Solar Flare Dark  
-Solar Flare Light  
-Solarized Dark  
-Solarized Light  
 Spacemacs Dark  
 Spacemacs Light  
 London Tube Dark  
