@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.6.1] - 2018-08-11
+## Changed
+- Improved visibility of text selection highlight color (see https://github.com/golf1052/base16-generator/issues/10)
+
 ## [1.6.0] - 2018-06-15
 ## Added
 - Added themes
