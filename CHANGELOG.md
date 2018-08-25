@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.7.0] - 2018-08-25
+## Added
+- Added settings editor preview and breadcrumbs theming from 1.26
+
 ## [1.6.1] - 2018-08-11
 ## Changed
 - Improved visibility of text selection highlight color (see https://github.com/golf1052/base16-generator/issues/10)
