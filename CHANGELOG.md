@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.8.0] - 2018-09-12
+## Added
+- Added themes
+  - Fruit Soda Dark
+  - Fruit Soda Light
+  - iA Dark
+  - iA Light
+  - PaperColor Dark
+  - PaperColor Light
+- Added `breadcrumb.background` and `settings.modifiedItemIndicator` from 1.27
+
 ## [1.7.0] - 2018-08-25
 ## Added
 - Added settings editor preview and breadcrumbs theming from 1.26

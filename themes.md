@@ -66,6 +66,8 @@ Ocean Dark
 Ocean Light  
 Dracula Dark  
 Dracula Light  
+Fruit Soda Dark  
+Fruit Soda Light  
 Github  
 Gruvbox dark, hard  
 Gruvbox dark, medium  
@@ -75,6 +77,8 @@ Gruvbox light, hard
 Gruvbox light, medium  
 Gruvbox light, soft  
 Gruvbox dark, pale Light  
+iA Dark  
+iA Light  
 Icy Dark  
 Materia Dark  
 Materia Light  
@@ -98,6 +102,8 @@ OneDark Dark
 OneDark Light  
 Outrun Dark  
 Outrun Light  
+PaperColor Dark  
+PaperColor Light  
 Porple Dark  
 Porple Light  
 Rebecca  
