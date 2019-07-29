@@ -6,6 +6,32 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.9.0] - 2019-07-28
+## Added
+- Added command to deactivate the activated Base16 theme. (see https://github.com/golf1052/base16-generator/issues/11)
+- Added themes
+  - Atlas Dark
+  - Atlas Light
+  - Decaf Dark
+  - Decaf Light
+  - Espresso Dark
+  - Espresso Light
+  - Framer Dark
+  - Framer Light
+  - Heetch Dark
+  - Heetch Light
+  - Helios Dark
+  - Helios Light
+  - Horizon Dark
+  - Horizon Light
+  - Nova
+  - Sandcastle Dark
+  - Sandcastle Light
+  - Synth Midnight Dark
+  - Synth Midnight Light
+  - Tomorrow Night Dark
+  - Tomorrow Night Light
+
 ## [1.8.0] - 2018-09-12
 ## Added
 - Added themes

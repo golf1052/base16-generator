@@ -20,6 +20,8 @@ Atelier Seaside Dark
 Atelier Seaside Light  
 Atelier Sulphurpool Dark  
 Atelier Sulphurpool Light  
+Atlas Dark  
+Atlas Light  
 Black Metal (Bathory) Dark  
 Black Metal (Bathory) Light  
 Black Metal (Burzum) Dark  
@@ -66,6 +68,12 @@ Ocean Dark
 Ocean Light  
 Dracula Dark  
 Dracula Light  
+Decaf Dark  
+Decaf Light  
+Espresso Dark  
+Espresso Light  
+Framer Dark  
+Framer Light  
 Fruit Soda Dark  
 Fruit Soda Light  
 Github  
@@ -77,6 +85,14 @@ Gruvbox light, hard
 Gruvbox light, medium  
 Gruvbox light, soft  
 Gruvbox dark, pale Light  
+Heetch Dark  
+Heetch Light  
+Helios Dark  
+Helios Light  
+Horizon Dark  
+Horizon Light  
+Horizon Dark  
+Horizon Light  
 iA Dark  
 iA Light  
 Icy Dark  
@@ -96,6 +112,7 @@ Mexico Dark
 Mexico Light  
 Nord Dark  
 Nord Light  
+Nova  
 One Dark  
 One Light  
 OneDark Dark  
@@ -107,6 +124,8 @@ PaperColor Light
 Porple Dark  
 Porple Light  
 Rebecca  
+Sandcastle Dark  
+Sandcastle Light  
 Snazzy Dark  
 Snazzy Light  
 Solar Flare Dark  
@@ -115,9 +134,13 @@ Solarized Dark
 Solarized Light  
 Summerfruit Dark  
 Summerfruit Light  
+Synth Midnight Dark  
+Synth Midnight Light  
 Tomorrow Dark  
 Tomorrow Light  
 Tomorrow Night Dark  
+Tomorrow Night Dark  
+Tomorrow Night Light  
 Tomorrow Night Light  
 Twilight Dark  
 Twilight Light  
