@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.10.0] - 2019-11-16
+## Added
+- A bunch of color customizations up to version 1.40
+- Added themes
+  - Edge Dark
+  - Edge Light
+  - Gigavolt Dark
+  - Gigavolt Light
+
 ## [1.9.0] - 2019-07-28
 ## Added
 - Added command to deactivate the activated Base16 theme. (see https://github.com/golf1052/base16-generator/issues/11)

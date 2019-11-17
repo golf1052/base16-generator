@@ -68,6 +68,8 @@ Ocean Dark
 Ocean Light  
 Dracula Dark  
 Dracula Light  
+Edge Dark  
+Edge Light  
 Decaf Dark  
 Decaf Light  
 Espresso Dark  
@@ -76,6 +78,8 @@ Framer Dark
 Framer Light  
 Fruit Soda Dark  
 Fruit Soda Light  
+Gigavolt Dark  
+Gigavolt Light  
 Github  
 Gruvbox dark, hard  
 Gruvbox dark, medium  
