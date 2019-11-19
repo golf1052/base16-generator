@@ -1,4 +1,5 @@
 {
+    "$schema": "vscode://schemas/color-theme",
     "name": "Base16 Gruvbox light, hard",
     "type": "light",
     "colors": {
@@ -191,8 +192,8 @@
         "statusBarItem.activeBackground": "#bdae93",
         "statusBarItem.hoverBackground": "#d5c4a1",
         "statusBarItem.prominentForeground": "#282828",
-        "statusBarItem.prominentBackground": "#f0f",
-        "statusBarItem.prominentHoverBackground": "#f00",
+        "statusBarItem.prominentBackground": "#8f3f71",
+        "statusBarItem.prominentHoverBackground": "#9d0006",
         "statusBarItem.remoteBackground": "#79740e",
         "statusBarItem.remoteForeground": "#282828",
         "titleBar.activeBackground": "#f9f5d7",
@@ -235,21 +236,21 @@
         "quickInput.foreground": "#504945",
         "terminal.background": "#f9f5d7",
         "terminal.foreground": "#504945",
-        "terminal.ansiBlack": "#d5c4a1",
-        "terminal.ansiBrightBlack": "#bdae93",
+        "terminal.ansiBlack": "#f9f5d7",
         "terminal.ansiRed": "#9d0006",
-        "terminal.ansiBrightRed": "#9d0006",
-        "terminal.ansiYellow": "#af3a03",
-        "terminal.ansiBrightYellow": "#b57614",
         "terminal.ansiGreen": "#79740e",
-        "terminal.ansiBrightGreen": "#79740e",
-        "terminal.ansiCyan": "#427b58",
-        "terminal.ansiBrightCyan": "#427b58",
+        "terminal.ansiYellow": "#b57614",
         "terminal.ansiBlue": "#076678",
-        "terminal.ansiBrightBlue": "#076678",
         "terminal.ansiMagenta": "#8f3f71",
+        "terminal.ansiCyan": "#427b58",
+        "terminal.ansiWhite": "#504945",
+        "terminal.ansiBrightBlack": "#bdae93",
+        "terminal.ansiBrightRed": "#9d0006",
+        "terminal.ansiBrightGreen": "#79740e",
+        "terminal.ansiBrightYellow": "#b57614",
+        "terminal.ansiBrightBlue": "#076678",
         "terminal.ansiBrightMagenta": "#8f3f71",
-        "terminal.ansiWhite": "#3c3836",
+        "terminal.ansiBrightCyan": "#427b58",
         "terminal.ansiBrightWhite": "#282828",
         "terminalCursor.foreground": "#504945",
         "debugToolBar.background": "#ebdbb2",
@@ -265,6 +266,7 @@
         "gitDecoration.submoduleResourceForeground": "#d65d0e",
         "settings.headerForeground": "#504945",
         "settings.modifiedItemIndicator": "#076678",
+        "settings.modifiedItemForeground": "#076678",
         "settings.dropdownBackground": "#ebdbb2",
         "settings.dropdownForeground": "#504945",
         "settings.checkboxBackground": "#ebdbb2",
@@ -273,7 +275,6 @@
         "settings.textInputForeground": "#504945",
         "settings.numberInputBackground": "#ebdbb2",
         "settings.numberInputForeground": "#504945",
-        "settings.modifiedItemForeground": "#79740e",
         "breadcrumb.foreground": "#504945",
         "breadcrumb.background": "#ebdbb2",
         "breadcrumb.focusForeground": "#3c3836",
@@ -307,7 +308,7 @@
         "symbolIcon.packageForeground": "#f0f",
         "symbolIcon.propertyForeground": "#504945",
         "symbolIcon.referenceForeground": "#f0f",
-        "symbolIcon.snippetForeground": "#f0f",
+        "symbolIcon.snippetForeground": "#504945",
         "symbolIcon.stringForeground": "#79740e",
         "symbolIcon.structForeground": "#b57614",
         "symbolIcon.textForeground": "#504945",
@@ -316,12 +317,6 @@
         "symbolIcon.variableForeground": "#9d0006"
     },
     "tokenColors": [
-        {
-            "settings": {
-                "foreground": "#eeffffff",
-                "background": "#263238ff"
-            }
-        },
         {
             "name": "Comment",
             "scope": [
@@ -361,7 +356,7 @@
                 "constant.other.color"
             ],
             "settings": {
-                "foreground": "#0f0"
+                "foreground": "#79740e"
             }
         },
         {
@@ -544,7 +539,7 @@
                 "meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js"
             ],
             "settings": {
-                "fontStyle": "normal",
+                "fontStyle": "",
                 "foreground": "#79740e"
             }
         },
@@ -554,7 +549,7 @@
                 "entity.name",
                 "support.type",
                 "support.class",
-                "support.orther.namespace.use.php",
+                "support.other.namespace.use.php",
                 "meta.use.php",
                 "support.other.namespace.php",
                 "markup.changed.git_gutter",
@@ -635,7 +630,7 @@
             ],
             "settings": {
                 "fontStyle": "italic",
-                "foreground": "#82AAFF"
+                "foreground": "#076678"
             }
         },
         {
@@ -760,7 +755,7 @@
             ],
             "settings": {
                 "fontStyle": "italic",
-                "foreground": "#FF5370"
+                "foreground": "#8f3f71"
             }
         },
         {
@@ -878,7 +873,7 @@
                 "text.html.markdown meta.dummy.line-break"
             ],
             "settings": {
-                "foreground": ""
+                "foreground": "#bdae93"
             }
         },
         {
@@ -939,22 +934,11 @@
             }
         },
         {
-            "name": "Markup - Strike",
-            "scope": [
-                "markup.strike"
-            ],
-            "settings": {
-                "fontStyle": "strike",
-                "foreground": ""
-            }
-        },
-        {
             "name": "Markdown - Blockquote",
             "scope": [
                 "markup.quote punctuation.definition.blockquote.markdown"
             ],
             "settings": {
-                "background": "#427b58",
                 "foreground": "#427b58"
             }
         },
@@ -964,8 +948,7 @@
                 "markup.quote"
             ],
             "settings": {
-                "fontStyle": "italic",
-                "foreground": ""
+                "fontStyle": "italic"
             }
         },
         {
@@ -1023,13 +1006,13 @@
             }
         },
         {
-            "name": "Markdown - Fenced Bode Block Variable",
+            "name": "Markdown - Fenced Code Block Variable",
             "scope": [
                 "markup.raw.block.fenced.markdown",
                 "variable.language.fenced.markdown"
             ],
             "settings": {
-                "foreground": "#f0f"
+                "foreground": "#8f3f71"
             }
         },
         {
@@ -1038,7 +1021,7 @@
                 "variable.language.fenced.markdown"
             ],
             "settings": {
-                "foreground": "#f00"
+                "foreground": "#9d0006"
             }
         },
         {
@@ -1048,7 +1031,6 @@
             ],
             "settings": {
                 "fontStyle": "bold",
-                "background": "#00000050",
                 "foreground": "#427b58"
             }
         },
@@ -1058,7 +1040,7 @@
                 "markup.table"
             ],
             "settings": {
-                "foreground": "#f0f"
+                "foreground": "#8f3f71"
             }
         },
         {
