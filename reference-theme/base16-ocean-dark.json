@@ -1,4 +1,5 @@
 {
+    "$schema": "vscode://schemas/color-theme",
     "name": "Base 16 Generator",
     "type": "dark",
     "colors": {
@@ -120,7 +121,9 @@
         "minimap.selectionHighlight": "#4f5b666f", //2
 
         // Editor groups and tabs
+        // Below is no longer supported as of 1.24
         "editorGroup.background": "#2b303b", //0
+        // Above is no longer supported as of 1.24
         // "editorGroup.border": "#f00",
         "editorGroup.dropBackground": "#4f5b666f", //2
         "editorGroupHeader.noTabsBackground": "#343d46", //1
@@ -310,8 +313,8 @@
         "statusBarItem.activeBackground": "#65737e", //3
         "statusBarItem.hoverBackground": "#4f5b66", //2
         "statusBarItem.prominentForeground": "#eff1f5", //7
-        "statusBarItem.prominentBackground": "#f0f",
-        "statusBarItem.prominentHoverBackground": "#f00",
+        "statusBarItem.prominentBackground": "#b48ead", //E
+        "statusBarItem.prominentHoverBackground": "#bf616a", //8
         "statusBarItem.remoteBackground": "#a3be8c", //B
         "statusBarItem.remoteForeground": "#eff1f5", //7
 
@@ -420,6 +423,9 @@
         // Settings editor colors
         "settings.headerForeground": "#c0c5ce", //5
         "settings.modifiedItemIndicator": "#8fa1b3", //D
+        // Below was introduced temporarily in 1.26
+        "settings.modifiedItemForeground": "#a3be8c", //B
+        // Above was introduced temporarily in 1.26
         "settings.dropdownBackground": "#343d46", //1
         "settings.dropdownForeground": "#c0c5ce", //5
         // "settings.dropdownBorder": "",
@@ -433,7 +439,6 @@
         "settings.numberInputBackground": "#343d46", //1
         "settings.numberInputForeground": "#c0c5ce", //5
         // "settings.numberInputBorder": "",
-        "settings.modifiedItemForeground": "#a3be8c", //B
         // "settings.inactiveSelectedItemBorder": "",
 
         // Breadcrumbs
@@ -476,7 +481,7 @@
         "symbolIcon.packageForeground": "#f0f",
         "symbolIcon.propertyForeground": "#c0c5ce", //5
         "symbolIcon.referenceForeground": "#f0f",
-        "symbolIcon.snippetForeground": "#f0f",
+        "symbolIcon.snippetForeground": "#c0c5ce", //5
         "symbolIcon.stringForeground": "#a3be8c", //B
         "symbolIcon.structForeground": "#ebcb8b", //A
         "symbolIcon.textForeground": "#c0c5ce", //5
@@ -485,12 +490,6 @@
         "symbolIcon.variableForeground": "#bf616a" //8
     },
     "tokenColors": [
-        {
-            "settings": {
-                "foreground": "#eeffffff",
-                "background": "#263238ff"
-            }
-        },
         {
             "name": "Comment",
             "scope": [
@@ -530,7 +529,7 @@
                 "constant.other.color"
             ],
             "settings": {
-                "foreground": "#0f0"
+                "foreground": "#a3be8c"
             }
         },
         {
@@ -713,7 +712,7 @@
                 "meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js"
             ],
             "settings": {
-                "fontStyle": "normal",
+                "fontStyle": "",
                 "foreground": "#a3be8c" //B
             }
         },
@@ -723,7 +722,7 @@
                 "entity.name",
                 "support.type",
                 "support.class",
-                "support.orther.namespace.use.php",
+                "support.other.namespace.use.php",
                 "meta.use.php",
                 "support.other.namespace.php",
                 "markup.changed.git_gutter",
@@ -804,7 +803,7 @@
             ],
             "settings": {
                 "fontStyle": "italic",
-                "foreground": "#82AAFF"
+                "foreground": "#8fa1b3"
             }
         },
         {
@@ -929,7 +928,7 @@
             ],
             "settings": {
                 "fontStyle": "italic",
-                "foreground": "#FF5370"
+                "foreground": "#b48ead" //E
             }
         },
         {
@@ -1047,7 +1046,7 @@
                 "text.html.markdown meta.dummy.line-break"
             ],
             "settings": {
-                "foreground": ""
+                "foreground": "#65737e" //3
             }
         },
         {
@@ -1108,22 +1107,11 @@
             }
         },
         {
-            "name": "Markup - Strike",
-            "scope": [
-                "markup.strike"
-            ],
-            "settings": {
-                "fontStyle": "strike",
-                "foreground": ""
-            }
-        },
-        {
             "name": "Markdown - Blockquote",
             "scope": [
                 "markup.quote punctuation.definition.blockquote.markdown"
             ],
             "settings": {
-                "background": "#96b5b4", //C
                 "foreground": "#96b5b4" //C
             }
         },
@@ -1133,8 +1121,7 @@
                 "markup.quote"
             ],
             "settings": {
-                "fontStyle": "italic",
-                "foreground": ""
+                "fontStyle": "italic"
             }
         },
         {
@@ -1192,13 +1179,13 @@
             }
         },
         {
-            "name": "Markdown - Fenced Bode Block Variable",
+            "name": "Markdown - Fenced Code Block Variable",
             "scope": [
                 "markup.raw.block.fenced.markdown",
                 "variable.language.fenced.markdown"
             ],
             "settings": {
-                "foreground": "#f0f"
+                "foreground": "#b48ead"
             }
         },
         {
@@ -1207,7 +1194,7 @@
                 "variable.language.fenced.markdown"
             ],
             "settings": {
-                "foreground": "#f00"
+                "foreground": "#bf616a"
             }
         },
         {
@@ -1217,7 +1204,6 @@
             ],
             "settings": {
                 "fontStyle": "bold",
-                "background": "#00000050",
                 "foreground": "#96b5b4" //C
             }
         },
@@ -1227,7 +1213,7 @@
                 "markup.table"
             ],
             "settings": {
-                "foreground": "#f0f"
+                "foreground": "#b48ead"
             }
         },
         {
