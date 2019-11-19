@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.11.0] - 2019-11-19
+## Fixed
+- Fixed terminal colors. (see https://github.com/golf1052/base16-vscode/pull/1, thanks @aaron-williamson)
+- Various fixes (see https://github.com/golf1052/base16-vscode/pull/2, thanks @reyemxela)
+- Fixed `symbolIcon.snippetForeground`
+
 ## [1.10.0] - 2019-11-16
 ## Added
 - A bunch of color customizations up to version 1.40
