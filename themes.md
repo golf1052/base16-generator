@@ -89,6 +89,8 @@ Gruvbox light, hard
 Gruvbox light, medium  
 Gruvbox light, soft  
 Gruvbox dark, pale Light  
+Hardcore Dark  
+Hardcore Light  
 Heetch Dark  
 Heetch Light  
 Helios Dark  
