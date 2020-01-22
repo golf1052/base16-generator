@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.12.0] - 2020-01-21
+## Added
+- [Debug icon color tokens](https://code.visualstudio.com/updates/v1_41#_debug-icon-color-tokens) from 1.41
+- Added themes
+  - Hardcore Dark
+  - Hardcore Light
+
+## Fixed
+- A few `symbolIcon` themes
+- `list.warningForeground` is now yellow instead of orange
+
 ## [1.11.0] - 2019-11-19
 ## Fixed
 - Fixed terminal colors. (see https://github.com/golf1052/base16-vscode/pull/1, thanks @aaron-williamson)

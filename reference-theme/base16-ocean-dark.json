@@ -87,7 +87,7 @@
         "list.inactiveFocusBackground": "#4f5b66", //2
         "list.invalidItemForeground": "#bf616a", //8
         "list.errorForeground": "#bf616a", //8
-        "list.warningForeground": "#d08770", //9
+        "list.warningForeground": "#ebcb8b", //A
         "listFilterWidget.background": "#2b303b", //0
         // "listFilterWidget.outline": "#f00",
         "listFilterWidget.noMatchesOutline": "#bf616a", //8
@@ -462,18 +462,18 @@
         "symbolIcon.constantForeground": "#d08770", //9
         "symbolIcon.constructorForeground": "#8fa1b3", //D
         "symbolIcon.enumeratorForeground": "#d08770", //9
-        "symbolIcon.enumeratorMemberForeground": "#f0f",
+        "symbolIcon.enumeratorMemberForeground": "#8fa1b3", //D
         "symbolIcon.eventForeground": "#ebcb8b", //A
         "symbolIcon.fieldForeground": "#bf616a", //8
-        "symbolIcon.fileForeground": "#f0f",
-        "symbolIcon.folderForeground": "#f00",
+        "symbolIcon.fileForeground": "#c0c5ce", //5
+        "symbolIcon.folderForeground": "#c0c5ce", //5
         "symbolIcon.functionForeground": "#8fa1b3", //D,
         "symbolIcon.interfaceForeground": "#8fa1b3", //D
         "symbolIcon.keyForeground": "#f0f",
         "symbolIcon.keywordForeground": "#b48ead", //E
         "symbolIcon.methodForeground": "#8fa1b3", //D
         "symbolIcon.moduleForeground": "#c0c5ce", //5
-        "symbolIcon.namespaceForeground": "#f0f",
+        "symbolIcon.namespaceForeground": "#c0c5ce", //5
         "symbolIcon.nullForeground": "#ab7967", //F
         "symbolIcon.numberForeground": "#d08770", //9
         "symbolIcon.objectForeground": "#f0f",
@@ -487,7 +487,24 @@
         "symbolIcon.textForeground": "#c0c5ce", //5
         "symbolIcon.typeParameterForeground": "#f0f",
         "symbolIcon.unitForeground": "#f0f",
-        "symbolIcon.variableForeground": "#bf616a" //8
+        "symbolIcon.variableForeground": "#bf616a", //8
+
+        // Debug Icons
+        "debugIcon.breakpointForeground": "#bf616a", //8
+        "debugIcon.breakpointDisabledForeground": "#a7adba", //4
+        "debugIcon.breakpointUnverifiedForeground": "#4f5b66", //2
+        "debugIcon.breakpointCurrentStackframeForeground": "#ebcb8b", //A
+        "debugIcon.breakpointStackframeForeground": "#ab7967", //F
+        "debugIcon.startForeground": "#a3be8c", //B
+        "debugIcon.pauseForeground": "#8fa1b3", //D
+        "debugIcon.stopForeground": "#bf616a", //8
+        "debugIcon.disconnectForeground": "#bf616a", //8
+        "debugIcon.restartForeground": "#a3be8c", //B
+        "debugIcon.stepOverForeground": "#8fa1b3", //D
+        "debugIcon.stepIntoForeground": "#96b5b4", //C
+        "debugIcon.stepOutForeground": "#b48ead", //E
+        "debugIcon.continueForeground": "#a3be8c", //B
+        "debugIcon.stepBackForeground": "#ab7967" //F
     },
     "tokenColors": [
         {
