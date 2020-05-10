@@ -56,6 +56,10 @@ Codeschool Dark
 Codeschool Light  
 Cupertino Dark  
 Cupertino Light  
+darkmoss Dark  
+darkmoss Light  
+Dark Violet Dark  
+Dark Violet Light  
 Cupcake Dark  
 Cupcake Light  
 Default Dark  
@@ -66,14 +70,21 @@ Mocha Dark
 Mocha Light  
 Ocean Dark  
 Ocean Light  
+dirtysea  
 Dracula Dark  
 Dracula Light  
 Edge Dark  
 Edge Light  
+Equilibrium Dark  
+Equilibrium Gray Dark  
+Equilibrium Gray Light  
+Equilibrium Light  
 Decaf Dark  
 Decaf Light  
 Espresso Dark  
 Espresso Light  
+eva Dark  
+eva Light  
 Framer Dark  
 Framer Light  
 Fruit Soda Dark  
@@ -99,6 +110,8 @@ Horizon Dark
 Horizon Light  
 Horizon Dark  
 Horizon Light  
+Humanoid dark  
+Humanoid light  
 iA Dark  
 iA Light  
 Icy Dark  
@@ -138,10 +151,14 @@ Solar Flare Dark
 Solar Flare Light  
 Solarized Dark  
 Solarized Light  
+summercamp Dark  
+summercamp Light  
 Summerfruit Dark  
 Summerfruit Light  
 Synth Midnight Dark  
 Synth Midnight Light  
+Tango Dark  
+Tango Light  
 Tomorrow Dark  
 Tomorrow Light  
 Tomorrow Night Dark  
@@ -212,6 +229,7 @@ London Tube Dark
 London Tube Light  
 Unikitty Dark  
 Unikitty Light  
+vulcan  
 Woodland Dark  
 Woodland Light  
 XCode Dusk Dark  

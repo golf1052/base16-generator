@@ -84,7 +84,7 @@ async function promptRestart(informationMessage: string): Promise<void> {
         return;
     }
     if (selectedAction.title == reloadAction.title) {
-        vscode.commands.executeCommand('workbench.action.reloadWindow');
+        await vscode.commands.executeCommand('workbench.action.reloadWindow');
     }
 }
 

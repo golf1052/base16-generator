@@ -6,6 +6,31 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.12.1] - 2020-05-10
+## Added
+- Added themes
+  - darkmoss Dark
+  - darkmoss Light
+  - Dark Violet Dark
+  - Dark Violet Light
+  - dirtysea
+  - Equilibrium Dark
+  - Equilibrium Gray Dark
+  - Equilibrium Gray Light
+  - Equilibrium Light
+  - eva Dark  
+  - eva Light
+  - Humanoid dark
+  - Humanoid light
+  - summercamp Dark
+  - summercamp Light
+  - Tango Dark
+  - Tango Light
+  - vulcan
+
+## Fixed
+- Fixed bug where double reload was needed when changing themes.
+
 ## [1.12.0] - 2020-01-21
 ## Added
 - [Debug icon color tokens](https://code.visualstudio.com/updates/v1_41#_debug-icon-color-tokens) from 1.41
