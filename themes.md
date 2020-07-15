@@ -83,8 +83,10 @@ Decaf Dark
 Decaf Light  
 Espresso Dark  
 Espresso Light  
-eva Dark  
-eva Light  
+Eva Dark  
+Eva Dim Dark  
+Eva Dim Light  
+Eva Light  
 Framer Dark  
 Framer Light  
 Fruit Soda Dark  
@@ -129,6 +131,8 @@ Mellow Purple Dark
 Mellow Purple Light  
 Mexico Dark  
 Mexico Light  
+Nebula Dark  
+Nebula Light  
 Nord Dark  
 Nord Light  
 Nova  
@@ -140,6 +144,8 @@ Outrun Dark
 Outrun Light  
 PaperColor Dark  
 PaperColor Light  
+Pasque Dark  
+Pasque Light  
 Porple Dark  
 Porple Light  
 Rebecca  
@@ -155,8 +161,8 @@ summercamp Dark
 summercamp Light  
 Summerfruit Dark  
 Summerfruit Light  
-Synth Midnight Dark  
-Synth Midnight Light  
+Synth Midnight Terminal Dark  
+Synth Midnight Terminal Light  
 Tango Dark  
 Tango Light  
 Tomorrow Dark  
