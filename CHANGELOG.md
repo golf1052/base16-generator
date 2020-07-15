@@ -6,6 +6,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.13.0] - 2020-07-15
+## Added
+- Added command to activate all themes (see https://github.com/golf1052/base16-generator/issues/16)
+- Added command to deactivate all themes
+- Added themes
+  - Eva Dim Dark
+  - Eva Dim Light
+  - Nebula Dark
+  - Nebula Light
+  - Pasque Dark
+  - Pasque Light
+
+## Changed
+- Command to activate a theme can now activate multiple themes at once
+- Command to deactivate a theme can now deactivate multiple themes at once
+- **Breaking**: In order to support the above two changes a minimum version of VSCode 1.22 is now required.
+- Changed themes
+  - Synth Midnight Dark is now named Synth Midnight Terminal Dark
+  - Synth Midnight Light is now named Synth Midnight Terminal Light
+
 ## [1.12.1] - 2020-05-10
 ## Added
 - Added themes
