@@ -6,7 +6,7 @@ Available on
 - [Visual Studio Code extension marketplace](https://marketplace.visualstudio.com/items?itemName=golf1052.base16-generator)
 - [Open VSX Registry](https://open-vsx.org/extension/golf1052/base16-generator)
 
-![](https://thumbs.gfycat.com/BriefEnlightenedAlligatorsnappingturtle-mobile.mp4)
+![](https://thumbs.gfycat.com/BriefEnlightenedAlligatorsnappingturtle-size_restricted.gif)
 
 ## Usage
 
