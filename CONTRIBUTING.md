@@ -50,3 +50,9 @@ If you want or need to run the steps manually
 ## Pushing Changes
 
 When pushing changes make sure that code changes and theme updates are in separate commits. For example [code changes for 1.3.0](https://github.com/golf1052/base16-generator/commit/4eab7a3b13ad951adf1984f1827a7f58480cd208) and separate [theme update commit](https://github.com/golf1052/base16-generator/commit/a331be7eb4b45bc980ebdf7058c59c09b393b12a).
+
+## Publishing Changes
+
+1. `vsce package`
+2. `vsce publish`
+3. `ovsx publish <latest .vsix> -p <Open VSX token>`

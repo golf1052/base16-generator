@@ -2,7 +2,11 @@
 
 A VSCode extension that provides all the Base16 themes. This extension themes both syntax and workbench colors using Base16 schemes. Base16 was created by [Chris Kempson](http://chriskempson.com).
 
-![](https://fat.gfycat.com/BriefEnlightenedAlligatorsnappingturtle.gif)
+Available on
+- [Visual Studio Code extension marketplace](https://marketplace.visualstudio.com/items?itemName=golf1052.base16-generator)
+- [Open VSX Registry](https://open-vsx.org/extension/golf1052/base16-generator)
+
+![](https://thumbs.gfycat.com/BriefEnlightenedAlligatorsnappingturtle-mobile.mp4)
 
 ## Usage
 
