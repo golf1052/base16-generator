@@ -6,8 +6,8 @@ import * as rimraf from 'rimraf';
 import * as generate_light_schemes from './generate-light-schemes';
 import * as finish_themes from './finish-themes';
 import * as list_themes from './list-themes';
-var recursive_copy = require('recursive-copy');
-var mkdirp = require('mkdirp');
+const recursive_copy = require('recursive-copy');
+import * as mkdirp from 'mkdirp';
 
 function main(): void {
     // First make a working directory

@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.13.1] - 2020-10-09
+## Fixed
+- Upgraded dependencies
+
 ## [1.13.0] - 2020-07-15
 ## Added
 - Added command to activate all themes (see https://github.com/golf1052/base16-generator/issues/16)
