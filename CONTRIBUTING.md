@@ -10,7 +10,7 @@ For example in the following image the type `string` is colored incorrectly.
 
 ## Testing and Building
 
-I am currently testing this extension with node v7.4.0.
+I am currently testing this extension with whatever the current node LTS version is.
 
 ### Setup Builder
 
@@ -42,7 +42,11 @@ If you want or need to run the steps manually
 [Base16 Repository](https://chriskempson.github.io/base16/)  
 
 1. Modify `reference-theme/base16-ocean-dark.json` using the colors from Base16 Ocean. Make sure to update the comments as necessary.
+    - Typically when adding new colors, be very selective when adding borders.
+    - If you come across a new color that you don't want to include, add it to `reference-theme/base16-ocean-dark.json` and `builder/templates/vscode/templates/default.mustache` but comment it out.
+    - Don't remove deprecated or removed colors, backwards compatibility is important and older version of VSCode could still be using that color. You may delete colors that are older than the vscode engine version in `package.json`.
 2. Copy `reference-theme/base16-ocean-dark.json` into the `themes` directory and debug the extension to make sure the changes have the desired effect.
+    - You can also update `workbench.colorCustomizations` in your VSCode settings to check new or updated theme colors.
 3. Repeat 1 and 2 until you are ready to publish your changes.
 4. Modify `builder/templates/vscode/templates/default.mustache` to reflect the changes made in `reference-theme/base16-ocean-dark.json`. Follow the template hex variables found [here](https://github.com/chriskempson/base16/blob/master/builder.md#template-variables).
 5. Follow the steps in Generate Themes
