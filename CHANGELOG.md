@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.14.0] - 2020-12-30
+## Added
+- A bunch of missing colors that were added to VSCode over the past year.
+- Added themes
+  - Kimber Dark
+  - Kimber Light
+  - Sagelight Dark
+  - Sagelight Light
+  - Silk Dark
+  - Silk Light
+
 ## [1.13.1] - 2020-10-09
 ## Fixed
 - Upgraded dependencies

@@ -117,6 +117,8 @@ Humanoid light
 iA Dark  
 iA Light  
 Icy Dark  
+Kimber Dark  
+Kimber Light  
 Materia Dark  
 Materia Light  
 Material Vivid Dark  
@@ -149,8 +151,12 @@ Pasque Light
 Porple Dark  
 Porple Light  
 Rebecca  
+Sagelight Dark  
+Sagelight Light  
 Sandcastle Dark  
 Sandcastle Light  
+Silk Dark  
+Silk Light  
 Snazzy Dark  
 Snazzy Light  
 Solar Flare Dark  
