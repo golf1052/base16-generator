@@ -2,7 +2,7 @@
   "name": "base16-generator",
   "displayName": "Base16 Theme Generator",
   "description": "All Base16 themes available on the fly",
-  "version": "1.14.0",
+  "version": "1.15.0",
   "publisher": "golf1052",
   "keywords": [
     "base16"
@@ -62,6 +62,12 @@
         "command": "base16.generator.deactivateAllThemes"
       }
     ]
+  },
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
   },
   "scripts": {
     "vscode:prepublish": "tsc -p ./",

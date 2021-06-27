@@ -6,6 +6,42 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.15.0] - 2021-06-27
+## Added
+- Added support for [Workspace Trust](https://code.visualstudio.com/docs/editor/workspace-trust) and [Virtual Workspaces](https://code.visualstudio.com/updates/v1_56#_define-whether-your-extension-supports-a-virtual-workspace).
+- Added themes
+  - Apprentice Dark
+  - Apprentice Light
+  - Colors Dark
+  - Colors Light
+  - DanQing Dark
+  - DanQing Light
+  - Darcula Dark
+  - Darcula Light
+  - pinky Dark
+  - pinky Light
+  - Qualia
+  - Rosé Pine Dark
+  - Rosé Pine Dawn Dark
+  - Rosé Pine Dawn Light
+  - Rosé Pine Light
+  - Rosé Pine Moon Dark
+  - Rosé Pine Moon Light
+  - Sakura Dark
+  - Sakura Light
+  - Shades of Purple Dark
+  - Shades of Purple Light
+  - tender Dark
+  - tender Light
+  - Windows 10 Dark
+  - Windows 10 Light
+  - Windows 95 Dark
+  - Windows 95 Light
+  - Windows High Contrast Dark
+  - Windows High Contrast Light
+  - Windows NT Dark
+  - Windows NT Light
+
 ## [1.14.0] - 2020-12-30
 ## Added
 - A bunch of missing colors that were added to VSCode over the past year.

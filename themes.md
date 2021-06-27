@@ -1,5 +1,7 @@
 # Available Themes
 
+Apprentice Dark  
+Apprentice Light  
 Atelier Cave Dark  
 Atelier Cave Light  
 Atelier Dune Dark  
@@ -54,8 +56,14 @@ Classic Dark
 Classic Light  
 Codeschool Dark  
 Codeschool Light  
+Colors Dark  
+Colors Light  
 Cupertino Dark  
 Cupertino Light  
+DanQing Dark  
+DanQing Light  
+Darcula Dark  
+Darcula Light  
 darkmoss Dark  
 darkmoss Light  
 Dark Violet Dark  
@@ -148,13 +156,26 @@ PaperColor Dark
 PaperColor Light  
 Pasque Dark  
 Pasque Light  
+pinky Dark  
+pinky Light  
 Porple Dark  
 Porple Light  
+Qualia  
 Rebecca  
+Rosé Pine Dark  
+Rosé Pine Dawn Dark  
+Rosé Pine Dawn Light  
+Rosé Pine Light  
+Rosé Pine Moon Dark  
+Rosé Pine Moon Light  
 Sagelight Dark  
 Sagelight Light  
+Sakura Dark  
+Sakura Light  
 Sandcastle Dark  
 Sandcastle Light  
+Shades of Purple Dark  
+Shades of Purple Light  
 Silk Dark  
 Silk Light  
 Snazzy Dark  
@@ -171,6 +192,8 @@ Synth Midnight Terminal Dark
 Synth Midnight Terminal Light  
 Tango Dark  
 Tango Light  
+tender Dark  
+tender Light  
 Tomorrow Dark  
 Tomorrow Light  
 Tomorrow Night Dark  
@@ -242,6 +265,14 @@ London Tube Light
 Unikitty Dark  
 Unikitty Light  
 vulcan  
+Windows 10 Dark  
+Windows 10 Light  
+Windows 95 Dark  
+Windows 95 Light  
+Windows High Contrast Dark  
+Windows High Contrast Light  
+Windows NT Dark  
+Windows NT Light  
 Woodland Dark  
 Woodland Light  
 XCode Dusk Dark  
