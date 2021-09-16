@@ -1,4 +1,3 @@
-'use strict';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as child_process from 'child_process';
@@ -37,11 +36,11 @@ function main(): void {
     // Copy user updated template to builder template directory
     copy(updatedTemplateFile, path.join(dir, 'sources/templates/vscode/templates/default.mustache'))
         .then(() => {
-            
-            
+
+
             // Generate light schemes
             generate_light_schemes.mainWithDir(schemesDir);
-        
+
             // Build templates
             try {
                 child_process.execSync('base16-builder build --template vscode', options);
@@ -49,20 +48,20 @@ function main(): void {
             catch (e) {
                 printE(e);
             }
-        
+
             // Empty the themes dir
-            
+
             fs.readdirSync(themesDir).forEach(file => {
                 fs.unlinkSync(path.join(themesDir, file));
             });
-        
+
             // Copy themes
-            return copy(path.join(dir, 'themes/vscode/themes'), themesDir)  
+            return copy(path.join(dir, 'themes/vscode/themes'), themesDir)
         })
         .then(() => {
             // Finally, finish themes
             finish_themes.mainWithDir(themesDir);
-            
+
             // also update themes list
             list_themes.mainWithDir(schemesDir);
 

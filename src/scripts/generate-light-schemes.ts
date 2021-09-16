@@ -1,4 +1,3 @@
-'use strict';
 import * as fs from 'fs';
 import * as path from 'path';
 var yaml = require('js-yaml');
@@ -15,8 +14,8 @@ interface SchemeProperties {
 }
 
 interface SchemePairing {
-    light: string,
-    dark: string
+    light?: string,
+    dark?: string
 }
 
 let filesToDelete: string[] = [];
@@ -38,7 +37,7 @@ export function mainWithDir(workingDirectory: string): void {
         console.log(`Current folder: ${schemeDir}`);
         // then for each scheme folder read the directory
         let files = fs.readdirSync(path.resolve(workingDirectory, schemeDir));
-        
+
         // filter out anything that isn't a .yaml file
         let schemes = files.filter(f => {
             return f.endsWith('.yaml');
@@ -53,7 +52,6 @@ export function mainWithDir(workingDirectory: string): void {
             const scheme: string = schemesCopy[i];
             let pathToSchemeFolder = path.resolve(workingDirectory, schemeDir);
             let isDark = isSchemeDark(scheme, pathToSchemeFolder);
-            let fileNameIsDark: boolean = null;
             let matchingSchemes = findMatchingSchemeNames(scheme, schemesCopy);
             if (isDark.isWeird) {
                 if (isDark.isDark) {
@@ -72,12 +70,10 @@ export function mainWithDir(workingDirectory: string): void {
                 if (isDark.isDark) {
                     pairings.push({
                         dark: scheme,
-                        light: null
                     });
                 }
                 else {
                     pairings.push({
-                        dark: null,
                         light: scheme
                     });
                 }
@@ -132,19 +128,21 @@ export function mainWithDir(workingDirectory: string): void {
         // now for each pairing
         pairings.forEach(pairing => {
             let pathToSchemeFolder = path.resolve(workingDirectory, schemeDir);
-            if (pairing.dark == null) {
+            if (pairing.light && !pairing.dark) {
                 // create dark version from light version
                 console.log(`Creating dark version from light version: ${pairing.light}`);
                 pairing.dark = reverseAndPolishScheme(pairing.light, pathToSchemeFolder, true, VersionToCreate.Dark, true);
             }
-            if (pairing.light == null) {
+            if (pairing.dark && !pairing.light) {
                 // create light version from dark version
                 console.log(`Creating light version from dark version: ${pairing.dark}`);
                 pairing.light = reverseAndPolishScheme(pairing.dark, pathToSchemeFolder, true, VersionToCreate.Light, true);
             }
-            // and also make sure schemes are polished
-            polishScheme(pairing.light, pathToSchemeFolder, VersionToCreate.Light);
-            polishScheme(pairing.dark, pathToSchemeFolder, VersionToCreate.Dark);
+            if (pairing.light && pairing.dark) {
+                // and also make sure schemes are polished
+                polishScheme(pairing.light, pathToSchemeFolder, VersionToCreate.Light);
+                polishScheme(pairing.dark, pathToSchemeFolder, VersionToCreate.Dark);
+            }
         });
 
         filesToDelete.forEach(file => {
@@ -201,7 +199,7 @@ function reverseAndPolishScheme(schemeFile: string,
     return newFileName;
 }
 
-function polishScheme(schemeFile: string, pathToSchemeFolder: string, versionToCreate: VersionToCreate): string {
+function polishScheme(schemeFile: string, pathToSchemeFolder: string, versionToCreate: VersionToCreate): string | void {
     if (schemeFile.indexOf('-light') != -1) {
         return schemeFile;
     }
