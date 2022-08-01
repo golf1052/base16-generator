@@ -102,6 +102,8 @@ Fruit Soda Light
 Gigavolt Dark  
 Gigavolt Light  
 Github  
+Gruber Dark  
+Gruber Light  
 Gruvbox dark, hard  
 Gruvbox dark, medium  
 Gruvbox dark, pale  
@@ -194,12 +196,6 @@ Tango Dark
 Tango Light  
 tender Dark  
 tender Light  
-Tomorrow Dark  
-Tomorrow Light  
-Tomorrow Night Dark  
-Tomorrow Night Dark  
-Tomorrow Night Light  
-Tomorrow Night Light  
 Twilight Dark  
 Twilight Light  
 3024 Dark  
@@ -264,6 +260,10 @@ London Tube Dark
 London Tube Light  
 Unikitty Dark  
 Unikitty Light  
+Vice Alt Dark  
+Vice Alt Light  
+Vice Dark  
+Vice Light  
 vulcan  
 Windows 10 Dark  
 Windows 10 Light  
