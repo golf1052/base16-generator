@@ -1,4 +1,3 @@
-'use strict';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as child_process from 'child_process';
@@ -6,7 +5,7 @@ import * as rimraf from 'rimraf';
 import * as generate_light_schemes from './generate-light-schemes';
 import * as finish_themes from './finish-themes';
 import * as list_themes from './list-themes';
-const recursive_copy = require('recursive-copy');
+import recursive_copy from 'recursive-copy';
 import * as mkdirp from 'mkdirp';
 
 function main(): void {

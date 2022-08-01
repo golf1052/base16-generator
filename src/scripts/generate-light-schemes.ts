@@ -1,8 +1,8 @@
 'use strict';
 import * as fs from 'fs';
 import * as path from 'path';
-var yaml = require('js-yaml');
-import * as color from 'color';
+import * as yaml from 'js-yaml';
+import color from 'color';
 
 enum VersionToCreate {
     Dark,
@@ -15,8 +15,8 @@ interface SchemeProperties {
 }
 
 interface SchemePairing {
-    light: string,
-    dark: string
+    light: string | null,
+    dark: string | null
 }
 
 let filesToDelete: string[] = [];
@@ -53,7 +53,6 @@ export function mainWithDir(workingDirectory: string): void {
             const scheme: string = schemesCopy[i];
             let pathToSchemeFolder = path.resolve(workingDirectory, schemeDir);
             let isDark = isSchemeDark(scheme, pathToSchemeFolder);
-            let fileNameIsDark: boolean = null;
             let matchingSchemes = findMatchingSchemeNames(scheme, schemesCopy);
             if (isDark.isWeird) {
                 if (isDark.isDark) {
@@ -135,7 +134,7 @@ export function mainWithDir(workingDirectory: string): void {
             if (pairing.dark == null) {
                 // create dark version from light version
                 console.log(`Creating dark version from light version: ${pairing.light}`);
-                pairing.dark = reverseAndPolishScheme(pairing.light, pathToSchemeFolder, true, VersionToCreate.Dark, true);
+                pairing.dark = reverseAndPolishScheme(pairing.light as string, pathToSchemeFolder, true, VersionToCreate.Dark, true);
             }
             if (pairing.light == null) {
                 // create light version from dark version
@@ -160,7 +159,7 @@ function reverseAndPolishScheme(schemeFile: string,
     reverseFile: boolean,
     versionToCreate: VersionToCreate,
     appendVersionToTitle: boolean): string {
-    let loadedScheme = yaml.safeLoad(fs.readFileSync(path.join(pathToSchemeFolder, schemeFile), 'utf8'));
+    let loadedScheme: any = yaml.load(fs.readFileSync(path.join(pathToSchemeFolder, schemeFile), 'utf8'));
     let strippedFileName: string = schemeFile.replace('-light', '').replace('-dark', '');
     let newFileName: string = '';
     if (reverseFile) {
@@ -192,7 +191,7 @@ function reverseAndPolishScheme(schemeFile: string,
         newFileName = appendStringToFilename(strippedFileName, '-light');
     }
     console.log(`Creating new file and deleting old file: ${newFileName}`);
-    fs.writeFileSync(path.join(pathToSchemeFolder, newFileName), yaml.safeDump(loadedScheme));
+    fs.writeFileSync(path.join(pathToSchemeFolder, newFileName), yaml.dump(loadedScheme));
     if (filesToDelete.indexOf(path.join(pathToSchemeFolder, schemeFile)) == -1) {
         if (schemeFile.indexOf('-dark') == -1 && schemeFile.indexOf('-light') == -1) {
             filesToDelete.push(path.join(pathToSchemeFolder, schemeFile));
@@ -201,14 +200,14 @@ function reverseAndPolishScheme(schemeFile: string,
     return newFileName;
 }
 
-function polishScheme(schemeFile: string, pathToSchemeFolder: string, versionToCreate: VersionToCreate): string {
+function polishScheme(schemeFile: string, pathToSchemeFolder: string, versionToCreate: VersionToCreate): void {
     if (schemeFile.indexOf('-light') != -1) {
-        return schemeFile;
+        return;
     }
     if (schemeFile.indexOf('-dark') != -1) {
-        return schemeFile;
+        return;
     }
-    let loadedScheme = yaml.safeLoad(fs.readFileSync(path.join(pathToSchemeFolder, schemeFile), 'utf8'));
+    let loadedScheme: any = yaml.load(fs.readFileSync(path.join(pathToSchemeFolder, schemeFile), 'utf8'));
     let strippedFileName: string = schemeFile.replace('-light', '').replace('-dark', '');
     let newFileName: string = '';
     loadedScheme.scheme = cleanSchemeTitle(loadedScheme.scheme);
@@ -227,7 +226,7 @@ function polishScheme(schemeFile: string, pathToSchemeFolder: string, versionToC
         newFileName = appendStringToFilename(strippedFileName, '-light');
     }
     console.log(`Creating new file and deleting old file: ${newFileName}`);
-    fs.writeFileSync(path.join(pathToSchemeFolder, newFileName), yaml.safeDump(loadedScheme));
+    fs.writeFileSync(path.join(pathToSchemeFolder, newFileName), yaml.dump(loadedScheme));
     if (filesToDelete.indexOf(path.join(pathToSchemeFolder, schemeFile)) == -1) {
         filesToDelete.push(path.join(pathToSchemeFolder, schemeFile));
     }
@@ -249,7 +248,7 @@ function appendStringToFilename(filename: string, str: string): string {
 }
 
 function isSchemeDark(schemeFile: string, pathToSchemeFolder: string): SchemeProperties {
-    let loadedScheme = yaml.safeLoad(fs.readFileSync(path.join(pathToSchemeFolder, schemeFile), 'utf8'));
+    let loadedScheme: any = yaml.load(fs.readFileSync(path.join(pathToSchemeFolder, schemeFile), 'utf8'));
     let base00 = isColorDark(`#${loadedScheme.base00}`);
     let base07 = isColorDark(`#${loadedScheme.base07}`);
     let schemeProperties: SchemeProperties = {

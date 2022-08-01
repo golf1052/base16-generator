@@ -38,8 +38,8 @@ If you want or need to run the steps manually
 
 [VSCode Theme Color Reference](https://code.visualstudio.com/docs/getstarted/theme-color-reference)  
 [Base16 Website](http://chriskempson.com/projects/base16/)  
-[Base16 Theme Examples](https://chriskempson.github.io/base16/)  
-[Base16 Repository](https://chriskempson.github.io/base16/)  
+[Base16 Theme Examples](https://golf1052.github.io/base16/)  
+[Base16 Repository](https://github.com/chriskempson/base16)  
 
 1. Modify `reference-theme/base16-ocean-dark.json` using the colors from Base16 Ocean. Make sure to update the comments as necessary.
     - Typically when adding new colors, be very selective when adding borders.
@@ -48,8 +48,10 @@ If you want or need to run the steps manually
 2. Copy `reference-theme/base16-ocean-dark.json` into the `themes` directory and debug the extension to make sure the changes have the desired effect.
     - You can also update `workbench.colorCustomizations` in your VSCode settings to check new or updated theme colors.
 3. Repeat 1 and 2 until you are ready to publish your changes.
-4. Modify `builder/templates/vscode/templates/default.mustache` to reflect the changes made in `reference-theme/base16-ocean-dark.json`. Follow the template hex variables found [here](https://github.com/chriskempson/base16/blob/master/builder.md#template-variables).
+4. Modify `builder/templates/vscode/templates/default.mustache` to reflect the changes made in `reference-theme/base16-ocean-dark.json`. Follow the template hex variables found [here](https://github.com/chriskempson/base16/blob/main/builder.md#template-tags).
 5. Follow the steps in Generate Themes
+
+If you want to inspect the colors used by syntax run the command `Developer: Inspect Editor Tokens and Scopes`.
 
 ## Pushing Changes
 
@@ -60,3 +62,7 @@ When pushing changes make sure that code changes and theme updates are in separa
 1. `vsce package`
 2. `vsce publish`
 3. `ovsx publish <latest .vsix> -p <Open VSX token>`
+
+## Other Things To Note
+
+Don't update `strip-json-comments` past 3.x.x as future versions only support ESM modules and there is [no support for ESM modules in VSCode currently](https://github.com/microsoft/vscode/issues/130367) with dependencies on Electron as well.

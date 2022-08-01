@@ -1,7 +1,7 @@
 'use strict';
 import * as fs from 'fs';
 import * as path from 'path';
-var yaml = require('js-yaml');
+import * as yaml from 'js-yaml';
 
 export function main(): void {
     mainWithDir('.');
@@ -21,7 +21,7 @@ export function mainWithDir(workingDirectory: string): void {
         let files = fs.readdirSync(path.resolve(workingDirectory, schemeDir));
         let schemes = files.filter(f => { return f.endsWith('.yaml'); });
         schemes.forEach(scheme => {
-            let loadedScheme = yaml.safeLoad(fs.readFileSync(path.join(resolvedWorkingDirectory, schemeDir, scheme), 'utf8'));
+            let loadedScheme: any = yaml.load(fs.readFileSync(path.join(resolvedWorkingDirectory, schemeDir, scheme), 'utf8'));
             console.log(loadedScheme.scheme);
             themesList += (`${loadedScheme.scheme}  \n`);
         });

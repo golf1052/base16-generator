@@ -1,8 +1,7 @@
-'use strict';
 import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
-var cjson = require('strip-json-comments');
+import cjson from 'strip-json-comments';
 
 export function activate(context: vscode.ExtensionContext) {
     let activateThemeCommand = vscode.commands.registerCommand('base16.generator.activateTheme', function () {
@@ -36,7 +35,7 @@ async function activateTheme(): Promise<void> {
         return item;
     });
 
-    const selectedThemes: vscode.QuickPickItem[] = await vscode.window.showQuickPick(themesList, {
+    const selectedThemes: vscode.QuickPickItem[] | undefined = await vscode.window.showQuickPick(themesList, {
         ignoreFocusOut: false,
         matchOnDescription: false,
         matchOnDetail: false,
@@ -51,12 +50,14 @@ async function activateTheme(): Promise<void> {
     const packageInfo = getPackageInfo();
     let numberOfThemesActivated: number = 0;
     for (const selectedTheme of selectedThemes) {
+        if (!selectedTheme.description) {
+            continue;
+        }
         const themeFile = parseJson(fs.readFileSync(path.join(themesDir, selectedTheme.description), 'utf8'));
         let themeType: string = 'vs-dark';
         if (themeFile.type == 'dark') {
             themeType = 'vs-dark';
-        }
-        else if (themeFile.type == 'light') {
+        } else if (themeFile.type == 'light') {
             themeType = 'vs';
         }
 
@@ -117,7 +118,7 @@ async function deactivateTheme(): Promise<void> {
         return;
     }
 
-    const activatedThemes: vscode.QuickPickItem[] = packageInfo.contributes.themes.map(theme => {
+    const activatedThemes: vscode.QuickPickItem[] = packageInfo.contributes.themes.map((theme: any) => {
         let themePathSplit: string[] = theme.path.split('/');
         let themeJson: string = themePathSplit[themePathSplit.length - 1];
 
@@ -128,7 +129,7 @@ async function deactivateTheme(): Promise<void> {
         return item;
     });
 
-    const deactivatedThemes: vscode.QuickPickItem[] = await vscode.window.showQuickPick(activatedThemes, {
+    const deactivatedThemes: vscode.QuickPickItem[] | undefined = await vscode.window.showQuickPick(activatedThemes, {
         ignoreFocusOut: false,
         matchOnDescription: false,
         matchOnDetail: false,
