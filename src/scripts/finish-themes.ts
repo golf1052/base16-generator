@@ -22,4 +22,4 @@ export function mainWithDir(workingDirectory: string): void {
     });
 }
 
-main();
+// main();
