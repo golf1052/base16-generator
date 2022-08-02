@@ -6,6 +6,94 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.17.0] - 2022-08-02
+### Added
+- Added themes
+  - Ayu Dark  
+  - Ayu Light  
+  - Ayu Mirage Dark  
+  - Ayu Mirage Light  
+  - Blue Forest  
+  - Blueish Dark  
+  - Blueish Light  
+  - Catppuccin Dark  
+  - Catppuccin Light  
+  - Da One Black Dark  
+  - Da One Black Light  
+  - Da One Gray Dark  
+  - Da One Gray Light  
+  - Da One Ocean Dark  
+  - Da One Ocean Light  
+  - Da One Paper Dark  
+  - Da One Paper Light  
+  - Da One Sea Dark  
+  - Da One Sea Light  
+  - Da One White Dark  
+  - Da One White Light  
+  - emil Dark  
+  - emil Light  
+  - EverForest Dark  
+  - EverForest Light  
+  - Gotham Dark  
+  - Gotham Light  
+  - Gruvbox Material Dark, Hard  
+  - Gruvbox Material Dark, Medium  
+  - Gruvbox Material Dark, Soft  
+  - Gruvbox Material Light, Hard  
+  - Gruvbox Material Light, Medium  
+  - Gruvbox Material Light, Soft  
+  - Horizon Terminal Dark  
+  - Horizon Terminal Light  
+  - Kanagawa  
+  - Katy Dark  
+  - Katy Light  
+  - lime Dark  
+  - lime Light  
+  - pandora  
+  - Primer Dark Dimmed  
+  - Primer Dark  
+  - Primer Dark Dimmed Light  
+  - Primer Light  
+  - Purpledream Dark  
+  - Purpledream Light  
+  - ShadeSmear Dark  
+  - ShadeSmear Light  
+  - Spaceduck Dark  
+  - Spaceduck Light  
+  - Stella Dark  
+  - Stella Light  
+  - Still Alive  
+  - Tokyo City Dark  
+  - Tokyo City Light  
+  - Tokyo City Terminal Dark  
+  - Tokyo City Terminal Light  
+  - Tokyo Night Dark  
+  - Tokyo Night Light  
+  - Tokyo Night Storm Dark  
+  - Tokyo Night Storm Light  
+  - Tokyo Night Terminal Dark  
+  - Tokyo Night Terminal Light  
+  - Tokyo Night Terminal Storm Dark  
+  - Tokyo Night Terminal Storm Light  
+  - Tokyodark Terminal Dark  
+  - Tokyodark Terminal Light  
+  - Tokyodark  
+  - Tomorrow Dark  
+  - Tomorrow Light  
+  - Tomorrow Night Dark  
+  - Tomorrow Night Eighties Dark  
+  - Tomorrow Night Eighties Light  
+  - Tomorrow Night Light  
+  - Unikitty Reversible Dark  
+  - Unikitty Reversible Light  
+  - UwUnicorn Dark  
+  - UwUnicorn Light  
+
+### Removed
+- Removed themes
+  - vice Alt Dark  
+  - vice Alt Light  
+
 ## [1.16.0] - 2022-08-01
 ### Added
 - Added a bunch of missing theme color customizations that were missing.
