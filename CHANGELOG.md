@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.17.1] - 2022-09-11
+### Changed
+- Changed URL for Chris Kempson in README
+
 ## [1.17.0] - 2022-08-02
 ### Added
 - Added themes
