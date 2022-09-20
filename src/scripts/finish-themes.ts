@@ -12,7 +12,7 @@ export function mainWithDir(workingDirectory: string): void {
     let files = dir.filter(d => {
         return d.endsWith('.json');
     });
-    
+
     files.forEach(f => {
         let json = JSON.parse(cjson(fs.readFileSync(path.resolve(workingDirectory, f), 'utf8')));
         if (!generate_light_schemes.isColorDark(json['colors']['editor.background'])) {

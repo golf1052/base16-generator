@@ -38,7 +38,7 @@ function main(): void {
         .then(() => {
             // Generate light schemes
             generate_light_schemes.mainWithDir(schemesDir);
-        
+
             // Build templates
             try {
                 child_process.execSync('base16-builder build --template vscode', options);
@@ -53,14 +53,14 @@ function main(): void {
             fs.readdirSync(themesDir).forEach(file => {
                 fs.unlinkSync(path.join(themesDir, file));
             });
-        
+
             // Copy themes
-            return copy(path.join(dir, 'themes/vscode/themes'), themesDir)  
+            return copy(path.join(dir, 'themes/vscode/themes'), themesDir)
         })
         .then(() => {
             // Finally, finish themes
             finish_themes.mainWithDir(themesDir);
-            
+
             // also update themes list
             list_themes.mainWithDir(schemesDir);
 

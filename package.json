@@ -61,7 +61,22 @@
         "title": "Deactivate all themes",
         "command": "base16.generator.deactivateAllThemes"
       }
-    ]
+    ],
+    "configuration": {
+      "properties": {
+        "base16.generator.activatedThemes": {
+          "default": [
+            "base16-default-dark"
+          ],
+          "description": "List of Base 16 themes that are active",
+          "items": {
+            "type": "string"
+          },
+          "scope": "application",
+          "type": "array"
+        }
+      }
+    }
   },
   "capabilities": {
     "untrustedWorkspaces": {
@@ -75,7 +90,7 @@
     "test": "node ./out/test/runTest.js"
   },
   "dependencies": {
-    "strip-json-comments": "^3.1.1"
+    "jsonc-parser": "^3.0.0"
   },
   "devDependencies": {
     "@types/color": "^3.0.3",
@@ -91,6 +106,7 @@
     "mocha": "^10.0.0",
     "recursive-copy": "^2.0.14",
     "rimraf": "^3.0.2",
+    "strip-json-comments": "^3.1.1",
     "typescript": "^4.7.4",
     "vscode-test": "^1.4.0",
     "webpack": "^5.74.0",
