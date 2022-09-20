@@ -132,8 +132,8 @@ Eva Dark
 Eva Dim Dark  
 Eva Dim Light  
 Eva Light  
-EverForest Dark  
-EverForest Light  
+Everforest Dark  
+Everforest Light  
 Flat Dark  
 Flat Light  
 Framer Dark  
