@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import cjson from 'strip-json-comments';
+import * as jsonc from 'jsonc-parser';
 import * as generate_light_schemes from './generate-light-schemes';
 
 export function main(): void {
@@ -14,7 +14,7 @@ export function mainWithDir(workingDirectory: string): void {
     });
 
     files.forEach(f => {
-        let json = JSON.parse(cjson(fs.readFileSync(path.resolve(workingDirectory, f), 'utf8')));
+        const json = jsonc.parse(fs.readFileSync(path.resolve(workingDirectory, f), 'utf8'));
         if (!generate_light_schemes.isColorDark(json['colors']['editor.background'])) {
             json.type = 'light';
         }

@@ -62,7 +62,3 @@ When pushing changes make sure that code changes and theme updates are in separa
 1. `vsce package`
 2. `vsce publish`
 3. `ovsx publish <latest .vsix> -p <Open VSX token>`
-
-## Other Things To Note
-
-Don't update `strip-json-comments` past 3.x.x as future versions only support ESM modules and there is [no support for ESM modules in VSCode currently](https://github.com/microsoft/vscode/issues/130367) with dependencies on Electron as well.
