@@ -23,6 +23,9 @@ async function activateTheme() {
     let configThemes = vscode.workspace.getConfiguration().get(ConfigurationPropertyName) as string[];
     const themeItems = helpers.getThemeItems(configThemes);
     const selectedThemes = await helpers.promptPickItems(themeItems);
+    if (!selectedThemes) {
+        return;
+    }
     const compareResult = helpers.compareThemes(selectedThemes, configThemes);
 
     if (compareResult.equal) {
@@ -46,7 +49,7 @@ async function deactivateTheme() {
     const themeItems = helpers.getThemeItemsToDisable(configThemes);
     const selectedThemes = await helpers.promptPickItems(themeItems);
 
-    if (!selectedThemes.length) {
+    if (!selectedThemes || selectedThemes.length === 0) {
         vscode.window.showInformationMessage('No themes to deactivate.');
         return;
     }

@@ -213,13 +213,14 @@ function getThemeNameFromTheme(t: Theme) {
 
 function getThemeNameFromThemePath(path: string) {
     // Gets the filename of the relative theme path without .json
+    // /themes/ is optional
     // Group 2 is the filename of the theme without .json
-    // https://regex101.com/r/d2Ld7K/1
-    const themeNameRegex = /^(.\/themes\/)(.*?)(\.json)?$/;
+    // https://regex101.com/r/d2Ld7K/2
+    const themeNameRegex = /^(.\/themes\/)?(.*?)(\.json)?$/;
     return path.replace(themeNameRegex, '$2');
 }
 
-export async function promptPickItems(themes: vscode.QuickPickItem[]): Promise<string[]> {
+export async function promptPickItems(themes: vscode.QuickPickItem[]): Promise<string[] | null> {
     const selectedThemes = await vscode.window.showQuickPick(themes, {
         ignoreFocusOut: false,
         matchOnDescription: false,
@@ -229,7 +230,7 @@ export async function promptPickItems(themes: vscode.QuickPickItem[]): Promise<s
     });
 
     if (!selectedThemes) {
-        return [];
+        return null;
     }
 
     return selectedThemes.map((item) => item.description!);
