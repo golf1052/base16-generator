@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.18.1] - 2022-09-20
+### Fixed
+- Theme settings being deleted if nothing is selected when running `Base16: Activate theme` command
+- Duplicate themes appearing in item picker list when running `Base16: Activate theme` command
+
 ## [1.18.0] - 2022-09-20
 ### Added
 - Added support for persisting active themes across updates. See [issue #15](https://github.com/golf1052/base16-generator/issues/15). Thanks @melck!
