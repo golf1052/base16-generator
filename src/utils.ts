@@ -87,6 +87,7 @@ export function getThemeItems(configuredThemes: string[]): vscode.QuickPickItem[
         themeItems.push(getThemeQuickPickItem(theme, false));
     }
 
+    themeItems.sort((a, b) => a.description!.localeCompare(b.description!));
     return themeItems;
 }
 
@@ -192,11 +193,13 @@ export async function promptPickItems(themes: vscode.QuickPickItem[]): Promise<s
         ignoreFocusOut: false,
         matchOnDescription: false,
         matchOnDetail: false,
-        placeHolder: 'Search a theme',
+        placeHolder: 'Base16 Default Dark',
         canPickMany: true,
     });
 
-    if (!selectedThemes) return [];
+    if (!selectedThemes) {
+        return [];
+    }
 
-    return selectedThemes.map((item) => item.description || '');
+    return selectedThemes.map((item) => item.description!);
 }

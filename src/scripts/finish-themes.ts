@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-var cjson = require('strip-json-comments');
+import cjson from 'strip-json-comments';
 import * as generate_light_schemes from './generate-light-schemes';
 
 export function main(): void {
@@ -22,4 +22,4 @@ export function mainWithDir(workingDirectory: string): void {
     });
 }
 
-main();
+// main();

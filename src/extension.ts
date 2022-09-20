@@ -25,8 +25,6 @@ export function activate(context: vscode.ExtensionContext): void {
     applyChanges();
 }
 
-export function deactivate(): void {}
-
 async function activateTheme() {
     let configThemes = vscode.workspace.getConfiguration().get('base16.generator.activatedThemes') as string[];
     const themeItems = getThemeItems(configThemes);
@@ -114,4 +112,7 @@ async function applyChanges() {
     }
 
     await promptRestart(`Base16 theme has changed (${resultStrings.join(', ')}). Please restart VSCode.`);
+}
+
+export function deactivate(): void {
 }

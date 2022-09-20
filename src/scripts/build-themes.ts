@@ -5,7 +5,7 @@ import * as rimraf from 'rimraf';
 import * as generate_light_schemes from './generate-light-schemes';
 import * as finish_themes from './finish-themes';
 import * as list_themes from './list-themes';
-const recursive_copy = require('recursive-copy');
+import recursive_copy from 'recursive-copy';
 import * as mkdirp from 'mkdirp';
 
 function main(): void {
@@ -36,8 +36,6 @@ function main(): void {
     // Copy user updated template to builder template directory
     copy(updatedTemplateFile, path.join(dir, 'sources/templates/vscode/templates/default.mustache'))
         .then(() => {
-
-
             // Generate light schemes
             generate_light_schemes.mainWithDir(schemesDir);
 
@@ -48,9 +46,10 @@ function main(): void {
             catch (e) {
                 printE(e);
             }
-
+            
+            // Make sure themes dir exists
+            fs.mkdirSync(themesDir);
             // Empty the themes dir
-
             fs.readdirSync(themesDir).forEach(file => {
                 fs.unlinkSync(path.join(themesDir, file));
             });
