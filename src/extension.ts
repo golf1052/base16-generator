@@ -1,13 +1,7 @@
 import * as vscode from 'vscode';
-import {
-    compareThemes,
-    getThemeItems,
-    getThemeItemsToDisable,
-    promptPickItems,
-    promptRestart,
-    getThemeNames,
-    writeActivatedThemes,
-} from './utils';
+import * as helpers from './extension-helpers';
+
+const ConfigurationPropertyName: string = 'base16.generator.activatedThemes';
 
 export function activate(context: vscode.ExtensionContext): void {
     const disposables: vscode.Disposable[] = [
@@ -21,97 +15,111 @@ export function activate(context: vscode.ExtensionContext): void {
     // Register disposables for deactivate function
     context.subscriptions.push(...disposables);
 
-    // If updating or reinstalling, it will generate themes from settings
+    // If updating or reinstalling, we'll activate themes from user settings
     applyChanges();
 }
 
 async function activateTheme() {
-    let configThemes = vscode.workspace.getConfiguration().get('base16.generator.activatedThemes') as string[];
-    const themeItems = getThemeItems(configThemes);
-    const selectedThemes = await promptPickItems(themeItems);
-    const compareResult = compareThemes(selectedThemes, configThemes);
+    let configThemes = vscode.workspace.getConfiguration().get(ConfigurationPropertyName) as string[];
+    const themeItems = helpers.getThemeItems(configThemes);
+    const selectedThemes = await helpers.promptPickItems(themeItems);
+    const compareResult = helpers.compareThemes(selectedThemes, configThemes);
 
     if (compareResult.equal) {
-        vscode.window.showInformationMessage('Base16 theme has no changes made.');
+        vscode.window.showInformationMessage('No themes to activate.');
         return;
     }
 
-    await vscode.workspace.getConfiguration().update('base16.generator.activatedThemes', selectedThemes, true);
+    await vscode.workspace.getConfiguration().update(ConfigurationPropertyName,
+        selectedThemes,
+        vscode.ConfigurationTarget.Global);
 }
 
 async function deactivateTheme() {
-    const configThemes = vscode.workspace.getConfiguration().get('base16.generator.activatedThemes') as string[];
+    const configThemes = vscode.workspace.getConfiguration().get(ConfigurationPropertyName) as string[];
 
     if (!configThemes) {
-        vscode.window.showInformationMessage('Base16 theme has no theme to deactivate.');
+        vscode.window.showInformationMessage('No themes to deactivate.');
         return;
     }
 
-    const themeItems = getThemeItemsToDisable(configThemes);
-    const selectedThemes = await promptPickItems(themeItems);
+    const themeItems = helpers.getThemeItemsToDisable(configThemes);
+    const selectedThemes = await helpers.promptPickItems(themeItems);
 
     if (!selectedThemes.length) {
-        vscode.window.showInformationMessage('Base16 theme has no changes made.');
+        vscode.window.showInformationMessage('No themes to deactivate.');
         return;
     }
 
-    const nextConfigThemes = configThemes.filter((t) => !selectedThemes.includes(t));
-    const target = vscode.ConfigurationTarget.Global;
-    await vscode.workspace.getConfiguration().update('base16.generator.activatedThemes', nextConfigThemes, target);
+    const updatedConfigThemes = configThemes
+        .filter((t) => !selectedThemes.includes(t))
+        .sort((a, b) => a.localeCompare(b));
+
+    await vscode.workspace.getConfiguration().update(ConfigurationPropertyName,
+        updatedConfigThemes,
+        vscode.ConfigurationTarget.Global);
 }
 
 async function activateAllThemes() {
-    const configThemes = vscode.workspace.getConfiguration().get('base16.generator.activatedThemes') as string[];
-    const allThemes = getThemeNames();
-    const compareResult = compareThemes(allThemes, configThemes);
-
-    if (compareResult.equal) {
-        vscode.window.showInformationMessage('Base16 theme has no changes made.');
-        return;
-    }
-
-    const target = vscode.ConfigurationTarget.Global;
-    await vscode.workspace.getConfiguration().update('base16.generator.activatedThemes', allThemes, target);
+    const allThemes = helpers.getAllThemeNames();
+    await vscode.workspace.getConfiguration().update(ConfigurationPropertyName,
+        allThemes,
+        vscode.ConfigurationTarget.Global);
 }
 
 async function deactivateAllThemes() {
-    const configThemes = vscode.workspace.getConfiguration().get('base16.generator.activatedThemes') as string[];
+    const configThemes = vscode.workspace.getConfiguration().get(ConfigurationPropertyName) as string[];
 
     if (!configThemes.length) {
-        vscode.window.showInformationMessage('Base16 theme has no changes made.');
+        vscode.window.showInformationMessage('No themes to deactivate.');
         return;
     }
 
-    const target = vscode.ConfigurationTarget.Global;
-    await vscode.workspace.getConfiguration().update('base16.generator.activatedThemes', [], target);
+    await vscode.workspace.getConfiguration().update(ConfigurationPropertyName, [], vscode.ConfigurationTarget.Global);
 }
 
 async function onDidChangeConfiguration(e: vscode.ConfigurationChangeEvent) {
-    if (e.affectsConfiguration('base16.generator.activatedThemes')) {
+    if (e.affectsConfiguration(ConfigurationPropertyName)) {
         applyChanges();
     }
 }
 
 async function applyChanges() {
-    const themes = vscode.workspace.getConfiguration().get('base16.generator.activatedThemes') as string[];
-    const result = writeActivatedThemes(themes);
+    const themes = vscode.workspace.getConfiguration().get(ConfigurationPropertyName) as string[];
+    const themesDeduped = [...new Set(themes)];
+    const validThemes = helpers.getValidThemeNames(themesDeduped);
+    const activeThemes = helpers.getActiveThemesInPackage();
+    // Check if new valid themes have been added to settings (we check for valid themes to avoid modifying settings if a
+    // user is entering a theme in the JSON settings file and has autosave enabled) or if there are any duplicate themes
+    if (!helpers.arrayEquals(validThemes, activeThemes) || !helpers.arrayEquals(themes, themesDeduped)) {
+        themesDeduped.sort((a, b) => a.localeCompare(b));
 
-    if (result.equal) {
+        // This check makes it so we only prompt to reload if there were new non-duplicate themes added
+        if (!helpers.arrayEquals(validThemes, activeThemes)) {
+            const updatedThemes = helpers.writeActivatedThemes(themesDeduped);
+            await vscode.workspace.getConfiguration().update(ConfigurationPropertyName,
+                updatedThemes,
+                vscode.ConfigurationTarget.Global);
+            await promptRestart(`Base16 theme has changed. Please restart VSCode.`);
+        } else {
+            await vscode.workspace.getConfiguration().update(ConfigurationPropertyName,
+                activeThemes,
+                vscode.ConfigurationTarget.Global);
+        }
+    }
+}
+
+async function promptRestart(informationMessage: string): Promise<void> {
+    const reloadAction: vscode.MessageItem = { title: 'Reload Now' };
+    const selectedAction = await vscode.window.showInformationMessage(informationMessage, reloadAction);
+
+    if (!selectedAction || selectedAction.title !== reloadAction.title) {
         return;
     }
 
-    const resultStrings = [];
-    if (result.added) {
-        resultStrings.push(`${result.added} Added`);
+    if (selectedAction.title == reloadAction.title) {
+        await vscode.commands.executeCommand('workbench.action.reloadWindow');
     }
-    if (result.removed) {
-        resultStrings.push(`${result.removed} Removed`);
-    }
-    if (!result.added && !result.removed && result.reordered) {
-        resultStrings.push(`${result.reordered} Ordered`);
-    }
-
-    await promptRestart(`Base16 theme has changed (${resultStrings.join(', ')}). Please restart VSCode.`);
 }
 
 export function deactivate(): void {

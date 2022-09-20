@@ -37,7 +37,7 @@
       {
         "label": "Base16 Default Dark",
         "uiTheme": "vs-dark",
-        "path": "themes/base16-default-dark.json"
+        "path": "./themes/base16-default-dark.json"
       }
     ],
     "commands": [
@@ -68,11 +68,11 @@
           "default": [
             "base16-default-dark"
           ],
-          "description": "List of activated themes.",
+          "description": "List of Base 16 themes that are active",
           "items": {
             "type": "string"
           },
-          "scope": "window",
+          "scope": "application",
           "type": "array"
         }
       }

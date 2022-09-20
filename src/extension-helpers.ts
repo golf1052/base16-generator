@@ -6,7 +6,7 @@ import * as vscode from 'vscode';
 const BASE_PATH = path.resolve(__dirname, '..', '..');
 const PACKAGE_PATH = path.join(BASE_PATH, 'package.json');
 const THEMES_PATH = path.join(BASE_PATH, 'themes');
-const THEMES = fs.readdirSync(THEMES_PATH).map((f: string) => path.basename(f, '.json'));
+const THEMES = fs.readdirSync(THEMES_PATH).map((f: string) => getThemeNameFromThemePath(f));
 const JSONC_MODIFICATION_OPTIONS: jsonc.ModificationOptions = {
     isArrayInsertion: false,
     formattingOptions: {
@@ -42,40 +42,56 @@ function toTheme(theme: Base16Theme, themePath: string): Theme {
     return {
         label: theme.name,
         uiTheme: UITheme[theme.type],
-        path: path.relative(BASE_PATH, themePath),
+        path: themePath
     };
 }
 
-function readActivatedThemes(packageContent: string): string[] {
+export function getActiveThemesInPackage(): string[] {
+    const packageContent = fs.readFileSync(PACKAGE_PATH, { encoding: 'utf8' });
     const parseErrors: jsonc.ParseError[] = [];
     const packageInfo = jsonc.parse(packageContent, parseErrors);
-
-    return packageInfo.contributes.themes.map((t: Theme) => path.basename(t.path, '.json'));
+    return packageInfo.contributes.themes.map((t: Theme) => getThemeNameFromTheme(t));
 }
 
-function getTheme(themeName: string): Theme {
+function getTheme(themeName: string): Theme | null {
     const parseErrors: jsonc.ParseError[] = [];
-    const themePath = path.join(THEMES_PATH, themeName.replace(/^(.*?)(\.json)?$/, '$1.json'));
-    const themeFile = fs.readFileSync(themePath, { encoding: 'utf8' });
-    const themeBase16: Base16Theme = jsonc.parse(themeFile, parseErrors);
-
-    return toTheme(themeBase16, themePath);
+    // Gets the filename of the theme without .json
+    // Group 1 is the filename of the theme without .json
+    // https://regex101.com/r/kwMkAN/1
+    const themeNameRegex = /^(.*?)(\.json)?$/;
+    const normalizedThemeName = themeName.replace(themeNameRegex, '$1');
+    const normalizedThemeFileName = `${normalizedThemeName}.json`;
+    const themePath = path.join(THEMES_PATH, normalizedThemeFileName);
+    try {
+        const themeFile = fs.readFileSync(themePath, { encoding: 'utf8' });
+        const themeBase16: Base16Theme = jsonc.parse(themeFile, parseErrors);
+        return toTheme(themeBase16, `./themes/${normalizedThemeFileName}`);
+    } catch (e) {
+        return null;
+    }
 }
 
-function getThemeQuickPickItem(themeName: string, picked: boolean): vscode.QuickPickItem {
+function getThemeQuickPickItem(themeName: string, picked: boolean): vscode.QuickPickItem | null {
     const theme = getTheme(themeName);
-    return {
-        label: theme.label,
-        description: themeName,
-        picked,
-    };
+    if (!theme) {
+        return null;
+    } else {
+        return {
+            label: theme.label,
+            description: themeName,
+            picked,
+        };
+    }
 }
 
 export function getThemeItems(configuredThemes: string[]): vscode.QuickPickItem[] {
     const themeItems: vscode.QuickPickItem[] = [];
 
     for (const configuredTheme of configuredThemes) {
-        themeItems.push(getThemeQuickPickItem(configuredTheme, true));
+        const themeItem = getThemeQuickPickItem(configuredTheme, true);
+        if (themeItem !== null) {
+            themeItems.push(themeItem);
+        }
     }
 
     for (const theme of THEMES) {
@@ -84,7 +100,10 @@ export function getThemeItems(configuredThemes: string[]): vscode.QuickPickItem[
             continue;
         }
 
-        themeItems.push(getThemeQuickPickItem(theme, false));
+        const themeItem = getThemeQuickPickItem(theme, false);
+        if (themeItem !== null) {
+            themeItems.push(themeItem);
+        }
     }
 
     themeItems.sort((a, b) => a.description!.localeCompare(b.description!));
@@ -95,13 +114,16 @@ export function getThemeItemsToDisable(configuredThemes: string[]): vscode.Quick
     const themeItems: vscode.QuickPickItem[] = [];
 
     for (const theme of configuredThemes) {
-        themeItems.push(getThemeQuickPickItem(theme, false));
+        const themeItem = getThemeQuickPickItem(theme, false);
+        if (themeItem !== null) {
+            themeItems.push(themeItem);
+        }
     }
 
     return themeItems;
 }
 
-export function getThemeNames(): string[] {
+export function getAllThemeNames(): string[] {
     return [...THEMES];
 }
 
@@ -156,36 +178,45 @@ export function compareThemes(configuredThemes: string[], activatedThemes: strin
     };
 }
 
-export function writeActivatedThemes(themeNames: string[] = []): ThemeCompareResult {
+/**
+ * Write the given list of theme names to package.json in order to activate them.
+ * 
+ * @param themeNames The list of theme names to activate.
+ * @returns The actual list of theme names activated. Theme names may be removed if given themes names were invalid.
+ */
+export function writeActivatedThemes(themeNames: string[] = []): string[] {
+    const themes = themeNames.map(t => {
+        const theme = getTheme(t);
+        if (!theme) {
+            return null;
+        } else {
+            return theme;
+        }
+    })
+    .filter(t => t !== null)
+    .sort((a, b) => a!.label.localeCompare(b!.label)) as Theme[];
+
     const packageContent = fs.readFileSync(PACKAGE_PATH, { encoding: 'utf8' });
-    const activatedThemes = readActivatedThemes(packageContent);
-    const compareResult = compareThemes(themeNames, activatedThemes);
+    const edits = jsonc.modify(packageContent, ['contributes', 'themes'], themes, JSONC_MODIFICATION_OPTIONS);
+    const packageContentModified = jsonc.applyEdits(packageContent, edits);
 
-    if (!compareResult.equal) {
-        const themes = themeNames.map((t) => getTheme(t));
+    fs.writeFileSync(PACKAGE_PATH, packageContentModified, {
+        encoding: 'utf8',
+    });
 
-        const edits = jsonc.modify(packageContent, ['contributes', 'themes'], themes, JSONC_MODIFICATION_OPTIONS);
-        const packageContentModified = jsonc.applyEdits(packageContent, edits);
-
-        fs.writeFileSync(PACKAGE_PATH, packageContentModified, {
-            encoding: 'utf8',
-        });
-    }
-
-    return compareResult;
+    return themes.map(t => getThemeNameFromTheme(t));
 }
 
-export async function promptRestart(informationMessage: string): Promise<void> {
-    const reloadAction: vscode.MessageItem = { title: 'Reload Now' };
-    const selectedAction = await vscode.window.showInformationMessage(informationMessage, reloadAction);
+function getThemeNameFromTheme(t: Theme) {
+    return getThemeNameFromThemePath(t.path);
+}
 
-    if (!selectedAction || selectedAction.title !== reloadAction.title) {
-        return;
-    }
-
-    if (selectedAction.title == reloadAction.title) {
-        await vscode.commands.executeCommand('workbench.action.reloadWindow');
-    }
+function getThemeNameFromThemePath(path: string) {
+    // Gets the filename of the relative theme path without .json
+    // Group 2 is the filename of the theme without .json
+    // https://regex101.com/r/d2Ld7K/1
+    const themeNameRegex = /^(.\/themes\/)(.*?)(\.json)?$/;
+    return path.replace(themeNameRegex, '$2');
 }
 
 export async function promptPickItems(themes: vscode.QuickPickItem[]): Promise<string[]> {
@@ -202,4 +233,22 @@ export async function promptPickItems(themes: vscode.QuickPickItem[]): Promise<s
     }
 
     return selectedThemes.map((item) => item.description!);
+}
+
+export function getValidThemeNames(themeNames: string[]): string[] {
+    return themeNames.filter(t => getTheme(t) !== null);
+}
+
+export function arrayEquals(a: string[], b: string[]): boolean {
+    if (a.length !== b.length) {
+        return false;
+    }
+
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] !== b[i]) {
+            return false;
+        }
+    }
+
+    return true;
 }
