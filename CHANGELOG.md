@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.18.0] - 2022-09-20
+### Added
+- Added support for persisting active themes across updates. See [issue #15](https://github.com/golf1052/base16-generator/issues/15). Thanks @melck!
+
+### Changed
+- Updated themes
+  - EverForest Dark and Light names changed to Everforest Dark and Light
+
 ## [1.17.1] - 2022-09-11
 ### Changed
 - Changed URL for Chris Kempson in README
