@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.19.0] - 2022-09-23
+### Changed
+- Moved `keyword.other` and `keyword.other.unit` from 09 to 0E
+  - The Base16 style guide specifies that 09 is "Integers, Boolean, Constants, XML Attributes, Markup Link Url" while 0E is "Keywords, Storage, Selector, Markup Italic, Diff Changed"
+
 ## [1.18.1] - 2022-09-20
 ### Fixed
 - Theme settings being deleted if nothing is selected when running `Base16: Activate theme` command
