@@ -519,6 +519,19 @@
             "name": "Keyword, Storage",
             "scope": [
                 "keyword",
+                "keyword.other",
+                "keyword.other.using",
+                "keyword.other.namespace",
+                "keyword.other.class",
+                "keyword.other.new",
+                "keyword.other.event",
+                "keyword.other.this",
+                "keyword.other.await",
+                "keyword.other.var",
+                "keyword.other.package",
+                "keyword.other.import",
+                "variable.language.this",
+                "storage.type.ts",
                 "storage.modifier"
             ],
             "settings": {
@@ -533,26 +546,6 @@
                 "keyword.control.from",
                 "keyword.control.import",
                 "keyword.control.as"
-            ],
-            "settings": {
-                "foreground": "#9b859d"
-            }
-        },
-        {
-            "name": "Keyword",
-            "scope": [
-                "keyword.other.using",
-                "keyword.other.namespace",
-                "keyword.other.class",
-                "keyword.other.new",
-                "keyword.other.event",
-                "keyword.other.this",
-                "keyword.other.await",
-                "keyword.other.var",
-                "keyword.other.package",
-                "keyword.other.import",
-                "variable.language.this",
-                "storage.type.ts"
             ],
             "settings": {
                 "foreground": "#9b859d"
@@ -657,8 +650,7 @@
                 "support.constant",
                 "constant.character",
                 "constant.escape",
-                "keyword.other.unit",
-                "keyword.other"
+                "keyword.other.unit"
             ],
             "settings": {
                 "foreground": "#cda869"
