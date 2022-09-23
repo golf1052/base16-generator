@@ -47,8 +47,12 @@ function main(): void {
                 printE(e);
             }
             
-            // Make sure themes dir exists
-            fs.mkdirSync(themesDir);
+            try {
+                // Make sure themes dir exists
+                fs.mkdirSync(themesDir);
+            } catch {
+            }
+            
             // Empty the themes dir
             fs.readdirSync(themesDir).forEach(file => {
                 fs.unlinkSync(path.join(themesDir, file));
