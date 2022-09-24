@@ -94,7 +94,7 @@ function printError(err: Error): void {
     console.error(err.name);
     console.error(err.message);
     console.error(err.stack);
-    process.exit(-1);
+    process.exit(1);
 }
 
 main();

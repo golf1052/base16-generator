@@ -11,7 +11,8 @@
             "outFiles": [
                 "${workspaceRoot}/out/src/scripts/*.js"
             ],
-            "cwd": "C:/Users/Sanders/builder/sources/schemes"
+            "cwd": "C:/Users/Sanders/builder/sources/schemes",
+            "preLaunchTask": "npm"
         },
         {
             "type": "node",
@@ -22,7 +23,20 @@
             "outFiles": [
                 "${workspaceRoot}/out/src/scripts/*.js"
             ],
-            "cwd": "${workspaceRoot}/out/src/scripts"
+            "cwd": "${workspaceRoot}/out/src/scripts",
+            "preLaunchTask": "npm"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug publish",
+            "program": "${workspaceRoot}/src/scripts/publish.ts",
+            "sourceMaps": true,
+            "outFiles": [
+                "${workspaceRoot}/out/src/scripts/*.js"
+            ],
+            "cwd": "${workspaceFolder}/out/src/scripts",
+            "preLaunchTask": "npm"
         },
         {
             "type": "node",

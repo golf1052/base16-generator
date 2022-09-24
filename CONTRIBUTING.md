@@ -59,6 +59,7 @@ When pushing changes make sure that code changes and theme updates are in separa
 
 ## Publishing Changes
 
-1. `vsce package`
-2. `vsce publish`
-3. `ovsx publish <latest .vsix> -p <Open VSX token>`
+1. Ensure package.json version number has been updated
+2. `vsce package`
+3. Ensure `OVSX_TOKEN` environment variable is set
+4. `node out/src/scripts/publish.js`
